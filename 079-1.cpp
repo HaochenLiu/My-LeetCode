@@ -45,10 +45,7 @@ public:
     }
     
     bool exist(vector<vector<char> > &board, string word) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
         if (word.size() == 0) return true;
-            
         memset(canUse, true, sizeof(canUse));
             
         step[0][0] = 1;
