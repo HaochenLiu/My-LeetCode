@@ -21,6 +21,6 @@ public:
                 nums[len] = nums[i];
             }
         }
-        return len + 1;;
+        return len + 1;
     }
 };
