@@ -1,7 +1,7 @@
 /*
 028. Implement strStr()
 http://blog.csdn.net/yaochunnian/article/details/7059486
-O(n)  
+O(nm)
 
 Implement strStr().
 
