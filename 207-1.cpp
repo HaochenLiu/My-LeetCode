@@ -1,3 +1,4 @@
+/*
 207. Course Schedule
 
 There are a total of n courses you have to take, labeled from 0 to n - 1.
@@ -14,6 +15,7 @@ This problem is equivalent to finding if a cycle exists in a directed graph. If 
 There are several ways to represent a graph. For example, the input prerequisites is a graph represented by a list of edges. Is this graph representation appropriate?
 Topological Sort via DFS - A great video tutorial (21 minutes) on Coursera explaining the basic concepts of Topological Sort.
 Topological sort could also be done via BFS.
+*/
 
 class Solution {
 public:
