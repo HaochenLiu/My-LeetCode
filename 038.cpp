@@ -16,28 +16,36 @@ Note: The sequence of integers will be represented as a string.
 
 class Solution {
 public:
-    string convert(string say) {
-        stringstream ss;
-        int count = 0;
-        char last = say[0];
-        for(int i = 0; i <= say.length(); ++i) {
-            if(say[i] == last) {
-                count++;
+    string iter(string str) {
+        if(str.empty()) return "";
+        string res;
+        int n = str.size();
+        char c = str[0];
+        int cnt = 1;
+        for(int i = 1; i < n; i++) {
+            if(str[i] == c) {
+                cnt++;
             } else {
-                ss << count << last;
-                count = 1;
-                last = say[i];
+                res += to_string(cnt);
+                res.append(1, c);
+                c = str[i];
+                cnt = 1;
             }
         }
-        return ss.str();
+        res += to_string(cnt);
+        res.append(1, c);
+        
+        return res;
     }
-    
+
     string countAndSay(int n) {
-        if(n <= 0) return string();
-        string say = "1";
-        for(int i = 1; i < n; ++i) {
-            say = convert(say);
+        if(n <= 0) return "";
+        if(n == 1) return "1";
+        string res = "1";
+        for(int i = 1; i < n; i++) {
+            res = iter(res);
         }
-        return say;
+
+        return res;
     }
 };
