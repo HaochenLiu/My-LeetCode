@@ -20,6 +20,7 @@ After running your function, the 2D grid should be:
 
 /*
 只有求路径最短的时候，用BFS。其余多数时候用DFS，比如求路径最长，其他指标最大或者最小。
+如果只求1点，就从该点开始搜索。如果求全局，就从始点（对其他点施加影响，但自身不受其他点影响）开始搜索。
 */
 
 class Solution {
