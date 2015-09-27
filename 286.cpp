@@ -18,6 +18,10 @@ After running your function, the 2D grid should be:
   0  -1   3   4
 */
 
+/*
+只有求路径最短的时候，用BFS。其余多数时候用DFS，比如求路径最长，其他指标最大或者最小。
+*/
+
 class Solution {
 private:
     int dx[4] = {0, 1, 0, -1};
