@@ -23,7 +23,8 @@ confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on
 /*
 Recursion
 Time: O(n)
-Space: O(h)
+Space: O(n)
+Extra space: O(h)
 h is depth of the tree. 
 */
 
