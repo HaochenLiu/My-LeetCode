@@ -24,7 +24,7 @@ confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on
 Iteration
 Time: O(n)
 Space: O(n)
-Extra: O(h)
+Extra space: O(h)
 h is depth of the tree. 
 */
 
