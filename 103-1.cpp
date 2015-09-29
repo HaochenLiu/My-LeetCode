@@ -23,6 +23,13 @@ return its zigzag level order traversal as:
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(b)
+b is width of the tree. 
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
