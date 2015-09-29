@@ -20,7 +20,8 @@ Note: Recursive solution is trivial, could you do it iteratively?
 /*
 Recursion
 Time: O(n)
-Space: O(h)
+Space: O(n)
+Extra space: O(h)
 h is depth of the tree. 
 */
 
