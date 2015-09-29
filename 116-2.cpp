@@ -36,6 +36,12 @@ After calling your function, the tree should look like:
     4->5->6->7 -> NULL
 */
 
+/*
+Time: O(n)
+Space: O(b)
+b is width of the tree. 
+*/
+
 /**
  * Definition for binary tree with next pointer.
  * struct TreeLinkNode {
