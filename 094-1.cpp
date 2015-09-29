@@ -20,6 +20,13 @@ Note: Recursive solution is trivial, could you do it iteratively?
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Recursion
+Time: O(n)
+Space: O(h)
+h is depth of the tree. 
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
