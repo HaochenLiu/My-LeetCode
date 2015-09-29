@@ -17,6 +17,13 @@ return [1,2,3].
 Note: Recursive solution is trivial, could you do it iteratively?
 */
 
+/*
+Recursion
+Time: O(n)
+Space: O(h)
+h is depth of the tree. 
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
