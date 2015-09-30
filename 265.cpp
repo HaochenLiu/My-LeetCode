@@ -9,6 +9,12 @@ Follow up:
 Could you solve it in O(nk) runtime?
 */
 
+/*
+Time: O(nk)
+Space: O(nk)
+Extra space: O(nk)
+*/
+
 class Solution {
 public:
     int minCostII(vector<vector<int>>& costs) {
