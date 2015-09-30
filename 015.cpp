@@ -16,8 +16,13 @@ Note:
     A solution set is:
     (-1, 0, 1)
     (-1, -1, 2)
+*/
 
-O(n^2)
+/*
+Time: O(n^2)
+Space: O(k)
+Extra space: O(1)
+k is the number of solutions
 */
 
 class Solution {
