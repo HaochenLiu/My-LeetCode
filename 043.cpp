@@ -2,8 +2,13 @@
 043. Multiply Strings
 
 Given two numbers represented as strings, return multiplication of the numbers as a string.
-
 Note: The numbers can be arbitrarily large and are non-negative.
+*/
+
+/*
+Time: O(mn)
+Space: O(n+m)
+Extra space: O(1)
 */
 
 class Solution {
