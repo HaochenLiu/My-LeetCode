@@ -10,6 +10,12 @@ Count the frequency of each character.
 If each character occurs even number of times, then it must be a palindrome. How about character which occurs odd number of times?
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     bool canPermutePalindrome(string s) {
