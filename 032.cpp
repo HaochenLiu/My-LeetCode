@@ -1,12 +1,16 @@
 /*
 032. Longest Valid Parentheses
-O(n)
 
 Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
-
 For "(()", the longest valid parentheses substring is "()", which has length = 2.
-
 Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
+*/
+
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(n)
+n is the length of s.
 */
 
 class Solution {
