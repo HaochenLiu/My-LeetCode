@@ -5,6 +5,13 @@ Given a binary search tree and a node in it, find the in-order successor of that
 Note: If the given node has no in-order successor in the tree, return null.
 */
 
+ /*
+Time: O(logn)
+Space: O(logn)
+Extra space: O(logn)
+Assume BST is balanced.
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -14,13 +21,6 @@ Note: If the given node has no in-order successor in the tree, return null.
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- 
- /*
-Time: O(logn)
-Space: O(logn)
-Extra space: O(logn)
-Assume BST is balanced.
-*/
 
 class Solution {
 private:
