@@ -4,6 +4,12 @@
 Implement pow(x, n).
 */
 
+/*
+Time: O(logn)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     double myPow(double x, int n) {
