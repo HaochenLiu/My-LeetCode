@@ -6,6 +6,12 @@ Hint:
 Expected runtime complexity is in O(log n) and the input is sorted.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     int hIndex(vector<int>& citations) {
