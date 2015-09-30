@@ -24,6 +24,13 @@ Do not use class member/global/static variables to store states. Your encode and
 Do not rely on any library method such as eval or serialize methods. You should implement your own encode/decode algorithm.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(1)
+n is the length of the string.
+*/
+
 class Codec {
 public:
 
