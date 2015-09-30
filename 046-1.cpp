@@ -8,6 +8,12 @@ For example,
 [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
 */
 
+/*
+Time: O(n!)
+Space: O(n!)
+Extra space: O(n)
+*/
+
 class Solution {
 private:
 public:
