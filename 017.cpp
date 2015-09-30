@@ -14,7 +14,7 @@ Although the above answer is in lexicographical order, your answer could be in a
 /*
 Time: O(4^n)
 Space: O(4^n)
-Extra space: O(1)
+Extra space: O(4^(n-1))
 n is the lenght of digits
 */
 
