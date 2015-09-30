@@ -22,7 +22,7 @@ Iteration
 Time: O(n)
 Space: O(n)
 Extra space: O(h)
-h is depth of the tree. 
+h is the height of the tree. 
 */
 
 /**
