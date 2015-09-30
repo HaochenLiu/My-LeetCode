@@ -26,8 +26,8 @@ confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on
 /*
 Time: O(n)
 Space: O(n)
-Extra space: O(b)
-b is width of the tree. 
+Extra space: O(w)
+w is the width of the tree. 
 */
 
 /**
