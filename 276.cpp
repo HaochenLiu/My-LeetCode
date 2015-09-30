@@ -8,6 +8,12 @@ Note:
 n and k are non-negative integers.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     int numWays(int n, int k) {
