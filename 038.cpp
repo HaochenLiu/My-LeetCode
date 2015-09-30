@@ -1,7 +1,7 @@
 /*
 038. Count and Say
-http://www.cnblogs.com/codingmylife/archive/2012/09/05/2671655.html
 
+http://www.cnblogs.com/codingmylife/archive/2012/09/05/2671655.html
 The count-and-say sequence is the sequence of integers beginning as follows:
 1, 11, 21, 1211, 111221, ...
 
@@ -10,8 +10,13 @@ The count-and-say sequence is the sequence of integers beginning as follows:
 21 is read off as "one 2, then one 1" or 1211.
 
 Given an integer n, generate the nth sequence.
-
 Note: The sequence of integers will be represented as a string.
+*/
+
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(n)
 */
 
 class Solution {
