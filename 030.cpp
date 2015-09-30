@@ -11,6 +11,15 @@ You should return the indices: [0,9].
 (order does not matter).
 */
 
+/*
+Time: O((nS-n*nL+1)*(n*nL))
+Space: O(n*nL)
+Extra space: O(n*nL)
+nS is the length of S.
+nL is the length of L.
+n is number of strings in L.
+*/
+
 class Solution {
 public:
     vector<int> findSubstring(string S, vector<string> &L) {
