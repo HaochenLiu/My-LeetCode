@@ -19,9 +19,12 @@ isMatch("aa", "*") → true
 isMatch("aa", "a*") → true
 isMatch("ab", "?*") → true
 isMatch("aab", "c*a*b") → false
+*/
 
+/*
 DP
-O(mn)
+Time: O(mn)
+Space: O(mn)
 */
 
 class Solution {
