@@ -1,4 +1,3 @@
-
 /*
 264. Ugly Number II
 
@@ -14,6 +13,12 @@ Credits:
 Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     int nthUglyNumber(int n) {
@@ -26,6 +31,6 @@ public:
             if(result[i] == result[index3] * 3) index3++;
             if(result[i] == result[index5] * 5) index5++;
         }
-        return result[n-1];
+        return result[n - 1];
     }
 };
