@@ -9,6 +9,12 @@ Credits:
 Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     int hIndex(vector<int>& citations) {
