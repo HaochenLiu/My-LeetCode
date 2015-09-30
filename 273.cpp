@@ -12,6 +12,12 @@ Group the number by thousands (3 digits). You can write a helper function that t
 There are many edge cases. What are some good test cases? Does your code work with input such as 0? Or 1000010? (middle chunk is zero and should not be printed out)
 */
 
+/*
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 private:
     string unit_digit[10] = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"};
