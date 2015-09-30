@@ -1,10 +1,13 @@
 /*
 029. Divide Two Integers
-防溢出
 
 Divide two integers without using multiplication, division and mod operator.
-
 If it is overflow, return MAX_INT.
+*/
+
+/*
+Time: O(1)
+Space: O(1)
 */
 
 class Solution {
