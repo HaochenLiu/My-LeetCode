@@ -22,7 +22,10 @@ isMatch("aab", "c*a*b") → true
 */
 
 /*
-Time: O(mn) worst case
+greedy
+Time: 
+O(n+m) best case
+O(mn) worst case
 Space: O(1)
 */
 
