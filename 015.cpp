@@ -22,7 +22,7 @@ Note:
 Time: O(n^2)
 Space: O(k)
 Extra space: O(1)
-k is the number of solutions
+k is number of solutions
 */
 
 class Solution {
