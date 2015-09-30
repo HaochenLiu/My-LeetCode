@@ -1,6 +1,5 @@
 /*
 010. Regular Expression Matching
-O(n)
 
 Implement regular expression matching with support for '.' and '*'.
 
@@ -20,8 +19,11 @@ isMatch("aa", "a*") → true
 isMatch("aa", ".*") → true
 isMatch("ab", ".*") → true
 isMatch("aab", "c*a*b") → true
+*/
 
-O(mn)
+/*
+Time: O(mn) worst case
+Space: O(mn)
 */
 
 class Solution {
