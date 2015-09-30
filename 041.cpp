@@ -9,6 +9,12 @@ and [3,4,-1,1] return 2.
 Your algorithm should run in O(n) time and uses constant space.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
