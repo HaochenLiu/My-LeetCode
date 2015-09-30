@@ -18,6 +18,8 @@ Note: If the given node has no in-order successor in the tree, return null.
  /*
 Time: O(logn)
 Space: O(logn)
+Extra space: O(logn)
+Assume BST is balanced.
 */
 
 class Solution {
