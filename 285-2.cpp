@@ -15,6 +15,11 @@ Note: If the given node has no in-order successor in the tree, return null.
  * };
  */
  
+ /*
+Time: O(logn)
+Space: O(logn)
+*/
+
 class Solution {
 private:
     TreeNode* inorderSuccessorRecur(TreeNode* node, TreeNode* candidate, TreeNode* p) {
