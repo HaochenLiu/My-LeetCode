@@ -19,9 +19,14 @@ isMatch("aa", "*") → true
 isMatch("aa", "a*") → true
 isMatch("ab", "?*") → true
 isMatch("aab", "c*a*b") → false
+*/
 
-贪心法
-O(mn)
+/*
+greedy
+Time: 
+O(n+m) best case
+O(mn) worst case
+Space: O(1)
 */
 
 class Solution {
