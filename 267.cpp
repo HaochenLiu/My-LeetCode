@@ -10,6 +10,12 @@ If a palindromic permutation exists, we just need to generate the first half of 
 To generate all distinct permutations of a (half of) string, use a similar approach from: Permutations II or Next Permutation.
 */
 
+/*
+Time: O((n/2)!)
+Space: O((n/2)!)
+Extra space: O((n/2)!)
+*/
+
 class Solution {
 public:
     vector<string> generatePalindromes(string s) {
