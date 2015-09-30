@@ -11,6 +11,23 @@ By calling next repeatedly until hasNext returns false, the order of elements re
 Follow up: What if you are given k 1d vectors? How well can your code be extended to such cases?
 */
 
+/*
+ZigzagIterator(vector<int>& v1, vector<int>& v2) {}
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+
+int next() {}
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+
+bool hasNext() {}
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class ZigzagIterator {
     int idx;
     vector<int> vec1;
