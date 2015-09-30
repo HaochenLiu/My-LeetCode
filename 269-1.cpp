@@ -20,6 +20,15 @@ If the order is invalid, return an empty string.
 There may be multiple valid order of letters, return any one of them is fine.
 */
 
+/*
+Time: O(E+V) = O(n)
+Space: O(E) = O(n)
+Extra space: O(E) = O(n)
+E = O(n) is the number of edges in graph.
+n is the number of words. 
+V = O(1) is the number of vertices in graph.
+*/
+
 class Solution {
 public:
     string alienOrder(vector<string>& words) {
