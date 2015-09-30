@@ -1,16 +1,20 @@
 /*
 028. Implement strStr()
+
 http://blog.csdn.net/yaochunnian/article/details/7059486
-
 Implement strStr().
-
 Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-
 Update (2014-11-02):
 The signature of the function had been updated to return the index instead of the pointer. If you still see your function signature returns a char * or String, please click the reload button to reset your code definition.
+*/
 
+/*
 KMP
-O(n+m)
+Time: O(n+m)
+Space: O(m)
+Extra space: O(m)
+n is the length of the string
+m is the length of the pattern
 */
 
 class Solution {
