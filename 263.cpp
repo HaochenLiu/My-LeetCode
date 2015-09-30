@@ -30,6 +30,6 @@ public:
             num /= 5;
         }
          
-        return num==1;
+        return (num == 1);
     }
 };
