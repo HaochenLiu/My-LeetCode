@@ -8,6 +8,12 @@ Credits:
 Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
 */
 
+/*
+Time: O(logn)
+Space: O(1)
+Extra space: O(1)
+*/
+
 // Forward declaration of isBadVersion API.
 bool isBadVersion(int version);
 
