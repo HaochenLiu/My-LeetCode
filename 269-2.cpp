@@ -24,7 +24,8 @@ There may be multiple valid order of letters, return any one of them is fine.
 Time: O(E)
 Space: O(1)
 Extra space: O(1)
-E is number of edges in graph
+E is the number of edges in graph.
+V = O(1) is the number of vertices in graph.
 */
 
 class Solution {
