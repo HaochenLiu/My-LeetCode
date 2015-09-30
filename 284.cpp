@@ -15,6 +15,23 @@ For a clean implementation, check out Google's guava library source code.
 Follow up: How would you extend your design to be generic and work with all types, not just integer?
 */
 
+/*
+class PeekingIterator : public Iterator {}
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+
+int next();
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+
+bool hasNext() const;
+Time: O(1)
+Space: O(1)
+Extra space: O(1)
+*/
+
 // Below is the interface for Iterator, which is already defined for you.
 // **DO NOT** modify the interface for Iterator.
 class Iterator {
