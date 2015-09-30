@@ -1,10 +1,15 @@
 /*
 014. Longest Common Prefix
-O(n)
-BF
-*/
 
 Write a function to find the longest common prefix string amongst an array of strings. 
+*/
+
+/*
+Time: O(nL)
+Space: O(L)
+L is the maximum length of string.
+n is number of strings.
+*/
 
 class Solution {
 public:
