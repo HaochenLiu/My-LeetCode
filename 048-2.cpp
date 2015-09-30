@@ -9,6 +9,12 @@ Follow up:
 Could you do this in-place?
 */
 
+/*
+Time: O(n^2)
+Space: O(n^2)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     void rotate(vector<vector<int> > &matrix) {
