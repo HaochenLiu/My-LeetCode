@@ -7,6 +7,12 @@ You are given a helper function bool knows(a, b) which tells you whether A knows
 Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity's label if there is a celebrity in the party. If there is no celebrity, return -1.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 // Forward declaration of the knows API.
 bool knows(int a, int b);
 
