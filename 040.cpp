@@ -2,9 +2,7 @@
 040. Combination Sum II
 
 Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
-
 Each number in C may only be used once in the combination.
-
 Note:
 
     All numbers (including target) will be positive integers.
@@ -17,6 +15,13 @@ A solution set is:
 [1, 2, 5]
 [2, 6]
 [1, 1, 6]
+*/
+
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(n)
+n is the length of candidates.
 */
 
 class Solution {
