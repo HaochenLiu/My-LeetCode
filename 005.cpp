@@ -1,7 +1,5 @@
 /*
 005. Longest Palindromic Substring
-O(n) 有难度
-动态规划
 
 http://blog.csdn.net/linulysses/article/details/5634104
 Manacher's ALGORITHM: O(n)时间求字符串的最长回文子串
@@ -9,8 +7,12 @@ http://www.felix021.com/blog/read.php?2040
 http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html
 
 Given a string S, find the longest palindromic substring in S. You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+*/
 
-O(n)
+/*
+DP
+Time: O(n)
+Space: O(n)
 */
 
 class Solution {
