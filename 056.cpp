@@ -8,6 +8,12 @@ Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18].
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(1)
+*/
+
 /**
  * Definition for an interval.
  * struct Interval {
