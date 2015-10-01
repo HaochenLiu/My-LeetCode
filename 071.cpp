@@ -8,6 +8,12 @@ path = "/home/", => "/home"
 path = "/a/./b/../../c/", => "/c"
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     string simplifyPath(string path) {
