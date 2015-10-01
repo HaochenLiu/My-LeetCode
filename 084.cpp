@@ -14,6 +14,12 @@ Given height = [2,1,5,6,2,3],
 return 10.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     int largestRectangleArea(vector<int> &height) {
