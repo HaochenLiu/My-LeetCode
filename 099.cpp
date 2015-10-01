@@ -11,6 +11,12 @@ A solution using O(n) space is pretty straight forward. Could you devise a const
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Time: O(logn)
+Space: O(1)
+Extra space: O(1)
+*/
+
 /**
  * Definition for binary tree
  * struct TreeNode {
