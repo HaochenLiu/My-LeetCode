@@ -11,6 +11,12 @@ You may assume that duplicates do not exist in the tree.
 preorder, inorder, postorder, level order四种traversal中。inorder加上任何其他一种，便可复原整个树。其他组合则不能复原。
 */
 
+/*
+Time: O(n)
+Space: O(logn)
+Extra space: O(logn)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
