@@ -12,6 +12,12 @@ Assume a BST is defined as follows:
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Time: O(n)
+Space: O(logn)
+Extra space: O(logn)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
