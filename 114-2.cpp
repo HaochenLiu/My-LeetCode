@@ -24,6 +24,13 @@ The flattened tree should look like:
              6
 */
 
+/*
+Time: O(n)
+Space: O(h)
+Extra space: O(h)
+h is the height of the tree. 
+*/
+
 /**
  * Definition for binary tree
  * struct TreeNode {
