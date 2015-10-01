@@ -15,6 +15,8 @@ If no valid conversion could be performed, a zero value is returned. If the corr
 /*
 Time: O(n)
 Space: O(1)
+Extra space: O(1)
+Stack depth: O(1)
 */
 
 class Solution {
