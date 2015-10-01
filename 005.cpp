@@ -40,7 +40,7 @@ public:
             }
             dp[i]--;
             
-            if(dp[i] > len) {
+            if(dp[i] >= len) {
                 len = dp[i];
                 C = i;
                 R = i + dp[i];
