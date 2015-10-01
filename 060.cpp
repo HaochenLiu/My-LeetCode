@@ -18,6 +18,12 @@ Given n and k, return the kth permutation sequence.
 Note: Given n will be between 1 and 9 inclusive.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     string getPermutation(int n, int k) {
