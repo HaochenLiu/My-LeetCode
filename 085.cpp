@@ -6,6 +6,13 @@ O(n^2)
 Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
 */
 
+/*
+Time: O(nm^2)
+Space: O(nm)
+Extra space: O(nm)
+Assume n >= m
+*/
+
 class Solution {
 public:
     int maximalRectangle(vector<vector<char> > &matrix) {
