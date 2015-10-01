@@ -21,6 +21,12 @@ If S = [1,2,2], a solution is:
 ]
 */
 
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(n)
+*/
+
 class Solution {
 private:
     vector<vector<int>> res;
