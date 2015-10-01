@@ -8,6 +8,7 @@ You are given two linked lists representing two non-negative numbers. The digits
 Time: O(n)
 Space: O(n)
 Extra space: O(1)
+Stack depth: O(1)
 */
 
 /**
