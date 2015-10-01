@@ -21,6 +21,13 @@ Return the formatted lines as:
 Note: Each word is guaranteed not to exceed L in length.
 */
 
+/*
+Time: O(nL)
+Space: O(nL)
+Extra space: O(L)
+n is the number of lines.
+*/
+
 class Solution {
 public:
     vector<string> fullJustify(vector<string> &words, int L) {
