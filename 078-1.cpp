@@ -23,6 +23,12 @@ If S = [1,2,3], a solution is:
 ]
 */
 
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
