@@ -1,8 +1,14 @@
 /*
 073. Set Matrix Zeroes
-http://www.cnblogs.com/xinsheng/p/3505299.html
 
+http://www.cnblogs.com/xinsheng/p/3505299.html
 Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
+*/
+
+/*
+Time: O(n^2)
+Space: O(n^2)
+Extra space: O(1)
 */
 
 class Solution {
