@@ -20,7 +20,7 @@ Given target = 20, return false.
 */
 
 /*
-Time: O(log(n+m))
+Time: O(n+m)
 Space: O(1)
 Extra space: O(1)
 */
