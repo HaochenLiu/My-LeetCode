@@ -26,9 +26,8 @@ The flattened tree should look like:
 
 /*
 Time: O(n)
-Space: O(logn+k)
+Space: O(logn)
 Extra space: O(logn)
-k is the number of solutions.
 */
 
 /**
