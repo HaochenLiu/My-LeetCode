@@ -1,8 +1,7 @@
 /*
 085. Maximal Rectangle
-http://www.cnblogs.com/remlostime/archive/2012/11/12/2766566.html
-O(n^2)
 
+http://www.cnblogs.com/remlostime/archive/2012/11/12/2766566.html
 Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
 */
 
