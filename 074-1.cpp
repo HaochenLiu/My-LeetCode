@@ -13,6 +13,12 @@ Consider the following matrix:
 Given target = 3, return true.
 */
 
+/*
+Time: O(log(n+m))
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
