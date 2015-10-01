@@ -16,6 +16,12 @@ If n = 4 and k = 2, a solution is:
 ]
 */
 
+/*
+Time: O(C(n,k))
+Space: O(k)
+Extra space: O(k)
+*/
+
 class Solution {
 private:
     void solve(vector<vector<int>>& res, vector<int>& record, int dep, int maxDep, int n, int start) {
