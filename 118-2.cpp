@@ -16,8 +16,8 @@ Return
 */
 
 /*
-Time: O(2^n)
-Space: O(2^n)
+Time: O(n^2)
+Space: O(n^2)
 Extra space: O(n)
 */
 
