@@ -15,6 +15,13 @@ The root-to-leaf path 1->3 represents the number 13.
 Return the sum = 12 + 13 = 25.
 */
 
+/*
+Time: O(n)
+Space: O(h)
+Extra space: O(h)
+h is the height of the tree. 
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
