@@ -55,6 +55,7 @@ After calling your function, the tree should look like:
 /*
 Time: O(n)
 Space: O(b)
+Extra space: O(b)
 b is width of the tree. 
 */
 
