@@ -13,6 +13,12 @@ Given m, n satisfy the following condition:
 1 ≤ m ≤ n ≤ length of list.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
