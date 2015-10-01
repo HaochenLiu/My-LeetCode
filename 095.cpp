@@ -15,6 +15,12 @@ Given n = 3, your program should return all 5 unique BST's shown below.
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(2^n)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
