@@ -13,6 +13,8 @@ There is a more generic way of solving this problem.
 /*
 Time: O(1)
 Space: O(1)
+Extra space: O(1)
+Stack depth: O(1)
 */
 
 class Solution {
