@@ -1,7 +1,7 @@
 /*
 120. Triangle
-http://www.cnblogs.com/remlostime/archive/2012/11/15/2772242.html
 
+http://www.cnblogs.com/remlostime/archive/2012/11/15/2772242.html
 Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
 
 For example, given the following triangle
@@ -17,6 +17,12 @@ The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
 Note:
 Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
+*/
+
+/*
+Time: O(n^2)
+Space: O(n)
+Extra space: O(n)
 */
 
 class Solution {
