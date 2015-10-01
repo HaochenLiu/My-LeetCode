@@ -15,6 +15,12 @@ If there is no such window in S that covers all characters in T, return the emtp
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     string minWindow(string S, string T) {
