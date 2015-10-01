@@ -7,6 +7,12 @@ Note:
 You may assume that duplicates do not exist in the tree.
 */
 
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(logn)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
