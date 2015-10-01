@@ -24,21 +24,15 @@ Stack depth: O(1)
 class Solution {
 public:
     int reverse(int x) {
-        if(x == INT_MIN) return 0;
-        
-        int res = 0;
-        int tmp = abs(x);
-        while(tmp != 0) {
-            if(res > INT_MAX / 10 || (res == INT_MAX / 10) && tmp % 10 > 7) {
+        long long lx = x;
+        long long res = 0;
+        while(lx) {
+            res *= 10;
+            res += (lx % 10);
+            lx /= 10;
+            if(res > INT_MAX || res < INT_MIN) {
                 return 0;
             }
-            res *= 10;
-            res += (tmp % 10);
-            tmp /= 10;
-        }
-        
-        if(x < 0) {
-            res = -res;
         }
         return res;
     }
