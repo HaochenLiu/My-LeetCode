@@ -13,6 +13,12 @@ Have you consider that the string might be empty? This is a good question to ask
 For the purpose of this problem, we define empty string as valid palindrome.
 */
 
+/*
+Time: O(n^2)
+Space: O(n)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     bool isPalindrome(string s) {
