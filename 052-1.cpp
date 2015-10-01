@@ -1,10 +1,15 @@
 /*
 052. N-Queens II
+
 http://www.cnblogs.com/TenosDoIt/p/3801621.html
-
 Follow up for N-Queens problem.
-
 Now, instead outputting board configurations, return the total number of distinct solutions.
+*/
+
+/*
+Time: O(n^n)
+Space: O(1)
+Extra space: O(1)
 */
 
 class Solution {
