@@ -2,8 +2,13 @@
 069. Sqrt(x)
 
 Implement int sqrt(int x).
-
 Compute and return the square root of x.
+*/
+
+/*
+Time: O(logx)
+Space: O(1)
+Extra space: O(1)
 */
 
 class Solution {
