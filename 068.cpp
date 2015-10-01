@@ -26,8 +26,6 @@ private:
     vector<string> ret;
 public:
     vector<string> fullJustify(vector<string> &words, int L) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
         ret.clear();
         int i = 0;
         while(i < words.size()) {
