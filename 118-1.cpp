@@ -15,37 +15,36 @@ Return
 ]
 */
 
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(n)
+*/
+
 class Solution {
-private:
-    vector<vector<int> > ret;
 public:
-    vector<vector<int> > generate(int numRows) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
-        ret.clear();
-        
-        for(int i = 0; i < numRows; i++)
-        {
-            if (i == 0)
-            {
-                vector<int> a;
-                a.push_back(1);
-                ret.push_back(a);
-            }
-            else
-            {
-                vector<int> a;
-                for(int j = 0; j <= i; j++)
-                    if (j == 0)
-                        a.push_back(ret[i-1][j]);
-                    else if (j == i)
-                        a.push_back(ret[i-1][j-1]);
-                    else
-                        a.push_back(ret[i-1][j-1] + ret[i-1][j]);
-                ret.push_back(a); 
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>> res;
+        for(int i = 0; i < numRows; i++) {
+            if (i == 0) {
+                vector<int> record;
+                record.push_back(1);
+                res.push_back(record);
+            } else {
+                vector<int> record;
+                for(int j = 0; j <= i; j++) {
+                    if (j == 0) {
+                        record.push_back(res[i - 1][j]);
+                    } else if (j == i) {
+                        record.push_back(res[i - 1][j - 1]);
+                    } else {
+                        record.push_back(res[i - 1][j - 1] + res[i - 1][j]);
+                    }
+                }
+                res.push_back(record); 
             }
         }
         
-        return ret;
+        return res;
     }
 };
