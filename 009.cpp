@@ -19,12 +19,15 @@ Stack depth: O(1)
 
 class Solution {
 public:
-    int reverse(int x) {
-        int res = 0;
+    long long reverse(int x) {
+        long long res = 0;
         while(x != 0) {
             res *= 10;
             res += x % 10;
             x /= 10;
+        }
+        if(res > INT_MAX) {
+            return -1;
         }
         return res;
     }
