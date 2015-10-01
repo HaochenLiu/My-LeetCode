@@ -7,6 +7,8 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively. Find t
 /*
 Time: O(log(m + n))
 Space: O(log(m + n))
+Extra space: O(log(m + n))
+Stack depth: O(log(m + n))
 */
 
 class Solution {
