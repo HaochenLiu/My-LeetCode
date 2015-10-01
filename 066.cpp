@@ -1,10 +1,15 @@
 /*
 066. Plus One
+
 http://blog.csdn.net/xiadasong007/article/details/4031184
-
 Given a non-negative number represented as an array of digits, plus one to the number.
-
 The digits are stored such that the most significant digit is at the head of the list.
+*/
+
+/*
+Time: O(n)
+Space: O(n)
+Extra space: O(1)
 */
 
 class Solution {
