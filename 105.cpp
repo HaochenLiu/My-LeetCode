@@ -13,7 +13,7 @@ preorder, inorder, postorder, level order四种traversal中。inorder加上任�
 
 /*
 Time: O(n)
-Space: O(logn)
+Space: O(n)
 Extra space: O(logn)
 */
 
