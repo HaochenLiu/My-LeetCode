@@ -20,9 +20,9 @@ Note: m and n will be at most 100.
 
 /*
 DP
-Time: O(n^2)
-Space: O(n^2)
-Extra space: O(n^2)
+Time: O(nm)
+Space: O(nm)
+Extra space: O(nm)
 */
 
 class Solution {
