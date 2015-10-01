@@ -25,6 +25,12 @@ Bonus points if you could solve it both recursively and iteratively.
 confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
 */
 
+/*
+Time: O(n)
+Space: O(logn)
+Extra space: O(logn)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
