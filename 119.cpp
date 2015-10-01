@@ -10,6 +10,12 @@ Note:
 Could you optimize your algorithm to use only O(k) extra space?
 */
 
+/*
+Time: O(n^2)
+Space: O(n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     vector<int> getRow(int rowIndex) {
