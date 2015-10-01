@@ -15,6 +15,12 @@ Return
 ]
 */
 
+/*
+Time: O(2^n)
+Space: O(2^n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     vector<vector<int> > generate(int numRows) {
