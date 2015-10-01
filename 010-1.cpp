@@ -25,6 +25,8 @@ isMatch("aab", "c*a*b") → true
 DP
 Time: O(mn)
 Space: O(mn)
+Extra space: O(mn)
+Stack depth: O(1)
 */
 
 class Solution {
