@@ -9,6 +9,12 @@ Credits:
 Special thanks to @ifanchu for adding this problem and creating all test cases. Thanks to @Freezen for additional test cases.
 */
 
+/*
+Time: O(n^2)
+Space: O(n)
+Extra space: O(n)
+*/
+
 class Solution {
 public:
     int longestPalindrom(string s) {
