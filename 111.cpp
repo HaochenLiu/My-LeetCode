@@ -7,8 +7,9 @@ The minimum depth is the number of nodes along the shortest path from the root n
 
 /*
 Time: O(n)
-Space: O(logn)
-Extra space: O(logn)
+Space: O(h)
+Extra space: O(h)
+h is the height of the tree. 
 */
 
 /**
