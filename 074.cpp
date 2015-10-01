@@ -19,11 +19,15 @@ Consider the following matrix:
 Given target = 3, return true.
 */
 
+/*
+Time: O(log(n+m))
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     bool searchMatrix(vector<vector<int> > &matrix, int target) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
         int i = 0;
         int j = matrix[0].size() - 1;
         
