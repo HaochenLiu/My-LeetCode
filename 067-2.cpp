@@ -1,13 +1,19 @@
 /*
 067. Add Binary
-http://shenxingfeng1988.blog.163.com/blog/static/10637600520112306124267/
 
+http://shenxingfeng1988.blog.163.com/blog/static/10637600520112306124267/
 Given two binary strings, return their sum (also a binary string).
 
 For example,
 a = "11"
 b = "1"
 Return "100".
+*/
+
+/*
+Time: O(n+m)
+Space: O(n+m)
+Extra space: O(1)
 */
 
 class Solution {
