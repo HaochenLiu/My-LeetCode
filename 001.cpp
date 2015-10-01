@@ -12,6 +12,7 @@ Output: index1=1, index2=2
 Time: O(n)
 Space: O(n+k)
 Extra space: O(n)
+Stack depth: O(1)
 k is number of solutions.
 */
 
