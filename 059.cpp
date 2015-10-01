@@ -14,6 +14,12 @@ You should return the following matrix:
 ]
 */
 
+/*
+Time: O(n^2)
+Space: O(n^2)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
     int step[4][2];
