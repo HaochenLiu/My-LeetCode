@@ -7,6 +7,12 @@ Would this affect the run-time complexity? How and why?
 Write a function to determine if a given target is in the array.
 */
 
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 private:
     bool find(vector<int>& nums, int l, int r, int target) {
