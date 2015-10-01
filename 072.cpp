@@ -10,6 +10,13 @@ b) Delete a character
 c) Replace a character
 */
 
+/*
+DP
+Time: O(nm)
+Space: O(nm)
+Extra space: O(nm)
+*/
+
 class Solution {
 public:
     int minDistance(string word1, string word2) {
