@@ -19,34 +19,28 @@ Given target = 5, return true.
 Given target = 20, return false.
 */
 
+/*
+Time: O(log(n+m))
+Space: O(1)
+Extra space: O(1)
+*/
+
 class Solution {
 public:
-    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int m = matrix.size();
-        if(m<=0){
-            return false;
+    bool searchMatrix(vector<vector<int> > &matrix, int target) {
+        int i = 0;
+        int j = matrix[0].size() - 1;
+        
+        while (i < matrix.size() && j >= 0) {
+            if (target == matrix[i][j]) {
+                return true;
+            } else if (target < matrix[i][j]) {
+                j--;
+            } else {
+                i++;
+            }
         }
-        int n = matrix[0].size();
-        if(n<=0){
-            return false;
-        }
-        return searchMatrixHelper(matrix, 0, m-1, 0, n-1, target);
-    }
-    
-    bool searchMatrixHelper(vector<vector<int>>& matrix, int startM, int endM, int startN, int endN, int target){
-        if(startM > endM || startN > endN){
-            return false;
-        }
-        int middleM = (startM + endM) / 2;
-        int middleN = (startN + endN) / 2;
-        if(matrix[middleM][middleN]==target){
-            return true;
-        }else if(matrix[middleM][middleN]<target){
-            return  searchMatrixHelper(matrix, startM, endM, middleN + 1, endN, target) ||
-                    searchMatrixHelper(matrix, middleM + 1, endM, startN, middleN, target);
-        }else{
-            return  searchMatrixHelper(matrix, startM, middleM - 1, startN, endN, target) ||
-                    searchMatrixHelper(matrix, middleM, endM, startN, middleN - 1, target);
-        }
+        
+        return false;
     }
 };
