@@ -2,15 +2,18 @@
 070. Climbing Stairs
 
 You are climbing a stair case. It takes n steps to reach to the top.
-
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+*/
+
+/*
+Time: O(n)
+Space: O(1)
+Extra space: O(1)
 */
 
 class Solution {
 public:
     int climbStairs(int n) {
-        // Start typing your C/C++ solution below
-        // DO NOT write int main() function
         long long f[100];
         f[0] = 1;
         f[1] = 1;
