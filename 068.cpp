@@ -22,11 +22,9 @@ Note: Each word is guaranteed not to exceed L in length.
 */
 
 class Solution {
-private:
-    vector<string> ret;
 public:
     vector<string> fullJustify(vector<string> &words, int L) {
-        ret.clear();
+        vector<string> res;
         int i = 0;
         while(i < words.size()) {
             int size = 0;
@@ -35,8 +33,7 @@ public:
                 int newSize = size == 0 ? words[i].size() : size + 1 + words[i].size();
                 if (newSize <= L) {
                     size = newSize;
-                }
-                else {
+                } else {
                     break;
                 }
                 i++;
@@ -44,7 +41,7 @@ public:
             
             int spaceCount = L - size;
             int everyCount;
-            if (i - 1 - beg != 0 && i != words.size()) {
+            if (i != beg + 1 && i != words.size()) {
                 everyCount = spaceCount / (i - 1 - beg);
                 spaceCount %= (i - 1 - beg);
             } else {
@@ -72,8 +69,8 @@ public:
                 s += ' ';
             }
                 
-            ret.push_back(s);
+            res.push_back(s);
         }
-        return ret;
+        return res;
     }
 };
