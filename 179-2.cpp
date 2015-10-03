@@ -15,8 +15,8 @@ public:
         string str = "";
 
         while(!nums.empty()) {
-                int idx1 = 0;
-                for(int idx2 = 1; idx2 < nums.size(); idx2++) {
+            int idx1 = 0;
+            for(int idx2 = 1; idx2 < nums.size(); idx2++) {
                 if(to_string(nums[idx2]) + to_string(nums[idx1]) > to_string(nums[idx1]) + to_string(nums[idx2])) {
                     idx1 = idx2;
                 }
