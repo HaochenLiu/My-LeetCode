@@ -17,7 +17,6 @@ convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
 Time: O(n)
 Space: O(n)
 Extra space: O(1)
-Stack depth: O(1)
 n is length of input string
 */
 
