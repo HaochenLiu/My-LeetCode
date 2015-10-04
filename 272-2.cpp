@@ -20,7 +20,9 @@ You would need two stacks to track the path in finding predecessor and successor
 class Solution {
 public:
     vector<int> closestKValues(TreeNode* root, double target, int k) {
-        vector<int> closest(k, 0);
+        vector<int> closest;
+        if(k == 0) return closest;
+        closest.resize(k, 0);
         stack<int> pre;
         stack<int> suc;
         inorder(root, target, false, pre);
