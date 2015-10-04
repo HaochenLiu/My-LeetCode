@@ -27,13 +27,17 @@ public:
         inorder(root, target, true, suc);
         for (int i = 0; i < k; i++) {
             if(pre.empty()) {
-                closest[i] = suc.top(), suc.pop();
+                closest[i] = suc.top();
+                suc.pop();
             } else if(suc.empty()) {
-                closest[i] = pre.top(), pre.pop();
+                closest[i] = pre.top();
+                pre.pop();
             } else if(abs(target - pre.top()) < abs(target - suc.top())) {
-                closest[i] = pre.top(), pre.pop();
+                closest[i] = pre.top();
+                pre.pop();
             } else {
-                closest[i] = suc.top(), suc.pop();
+                closest[i] = suc.top();
+                suc.pop();
             }
         }
 
@@ -42,9 +46,19 @@ public:
 private:
     void inorder(TreeNode* root, double target, bool reversed, stack<int>& s) {
         if (root == NULL) return;
-        inorder(reversed ? root -> right : root -> left, target, reversed, s);
-        if ((reversed && root -> val <= target) || (!reversed && root -> val > target)) return;
+        if(reversed) {
+            inorder(root->right, target, reversed, s);
+        } else {
+            inorder(root->left, target, reversed, s);
+        }
+        if ((reversed && root -> val <= target) || (!reversed && root -> val > target)) {
+            return;
+        }
         s.push(root -> val);
-        inorder(reversed ? root -> left : root -> right, target, reversed, s);
+        if(reversed) {
+            inorder(root->left, target, reversed, s);
+        } else {
+            inorder(root->right, target, reversed, s);
+        }
     }
 };
