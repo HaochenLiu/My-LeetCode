@@ -8,6 +8,7 @@ Note: You may not slant the container.
 /*
 Time: O(n)
 Space: O(1)
+Extra space: O(1)
 */
 
 class Solution {
