@@ -13,7 +13,7 @@ Given a string S, find the longest palindromic substring in S. You may assume th
 DP
 Time: O(n)
 Space: O(n)
-Stack depth: O(1)
+Extra space: O(n)
 */
 
 class Solution {
