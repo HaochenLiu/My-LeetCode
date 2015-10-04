@@ -13,6 +13,7 @@ Try to do this in one pass.
 /*
 Time: O(n)
 Space: O(1)
+Extra space: O(1)
 */
 
 /**
