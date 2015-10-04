@@ -8,6 +8,7 @@ Given a string, find the length of the longest substring without repeating chara
 /*
 Time: O(n)
 Space: O(1)
+Extra space: O(1)
 256 is O(1)
 */
 
