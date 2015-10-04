@@ -11,6 +11,7 @@ Input is guaranteed to be within the range from 1 to 3999.
 /*
 Time: O(1)
 Space: O(1)
+Extra space: O(1)
 */
 
 class Solution {
