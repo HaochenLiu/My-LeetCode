@@ -27,7 +27,7 @@ public:
         stack<int> suc;
         inorder(root, target, false, pre);
         inorder(root, target, true, suc);
-        for (int i = 0; i < k; i++) {
+        for(int i = 0; i < k; i++) {
             if(pre.empty()) {
                 closest[i] = suc.top();
                 suc.pop();
@@ -53,7 +53,7 @@ private:
         } else {
             inorder(root->left, target, reversed, s);
         }
-        if ((reversed && root->val <= target) || (!reversed && root->val > target)) {
+        if((reversed && root->val <= target) || (!reversed && root->val > target)) {
             return;
         }
         s.push(root -> val);
