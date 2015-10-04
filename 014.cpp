@@ -7,6 +7,7 @@ Write a function to find the longest common prefix string amongst an array of st
 /*
 Time: O(nL)
 Space: O(L)
+Extra space: O(L)
 L is the maximum length of string.
 n is number of strings.
 */
