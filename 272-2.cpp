@@ -17,6 +17,12 @@ Without parent pointer we just need to keep track of the path from the root to t
 You would need two stacks to track the path in finding predecessor and successor node separately.
 */
 
+/*
+Time: O(logn+k)
+Space: O(k)
+Extra space: O(k)
+*/
+
 class Solution {
 private:
     //binary search, in order traversal, two arrays
