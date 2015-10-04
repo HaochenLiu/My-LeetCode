@@ -9,6 +9,7 @@ The brackets must close in the correct order, "()" and "()[]{}" are all valid bu
 stack
 Time: O(n)
 Space: O(n)
+Extra space: O(n)
 */
 
 class Solution {
