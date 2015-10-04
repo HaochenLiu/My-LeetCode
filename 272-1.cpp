@@ -17,6 +17,12 @@ Without parent pointer we just need to keep track of the path from the root to t
 You would need two stacks to track the path in finding predecessor and successor node separately.
 */
 
+/*
+Time: O(n*logk)
+Space: O(k)
+Extra space: O(k)
+*/
+
 class Solution {
 private:
     void closestK(TreeNode* node, priority_queue<pair<double, int>>& pq, double target, int k) {
