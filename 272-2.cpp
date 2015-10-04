@@ -18,49 +18,56 @@ You would need two stacks to track the path in finding predecessor and successor
 */
 
 class Solution {
+private:
+    //binary search, in order traversal, two arrays
+    //smaller array stores nearest numbers<target in descending order
+    //larger array stores nearest numbers>=target in ascending order
+    //O(logN+k);
+    void dfs(TreeNode *node, double target, int k, vector<int>& larger, vector<int>& smaller) {
+        if(!node) return;
+        if(target <= node->val){
+            dfs(node->left, target, k, larger, smaller);
+            larger.push_back(node->val);
+            if(larger.size() >= k) {
+                return; //Skip beacuse we only need nearest k numbers
+            }
+            dfs(node->right, target, k, larger, smaller);
+        } else {
+            dfs(node->right, target, k, larger, smaller);
+            smaller.push_back(node->val);
+            if(smaller.size() >= k) {
+                return;//Skip beacuse we only need nearest k numbers
+            }
+            dfs(node->left, target, k, larger, smaller);
+        }
+    }
+    
 public:
     vector<int> closestKValues(TreeNode* root, double target, int k) {
-        vector<int> closest;
-        if(k == 0) return closest;
-        closest.resize(k, 0);
-        stack<int> pre;
-        stack<int> suc;
-        inorder(root, target, false, pre);
-        inorder(root, target, true, suc);
-        for(int i = 0; i < k; i++) {
-            if(pre.empty()) {
-                closest[i] = suc.top();
-                suc.pop();
-            } else if(suc.empty()) {
-                closest[i] = pre.top();
-                pre.pop();
-            } else if(abs(target - pre.top()) < abs(target - suc.top())) {
-                closest[i] = pre.top();
-                pre.pop();
+        vector<int> larger;
+        vector<int> smaller;
+        vector<int> res;
+        dfs(root, target, k, larger, smaller);
+        int i = 0;
+        int j = 0;
+        //merge smaller array and larger array, get the nearest k numbers
+        while(res.size() < k){
+            if(i == larger.size()) {
+                res.push_back(smaller[j]);
+                j++;
+            } else if(j == smaller.size()) {
+                res.push_back(larger[i]);
+                i++;
             } else {
-                closest[i] = suc.top();
-                suc.pop();
+                if(larger[i] - target <= target - smaller[j]) {
+                    res.push_back(larger[i]);
+                    i++;
+                } else {
+                    res.push_back(smaller[j]);
+                    j++;
+                }
             }
         }
-
-        return closest;
-    }
-private:
-    void inorder(TreeNode* root, double target, bool reversed, stack<int>& s) {
-        if (root == NULL) return;
-        if(reversed) {
-            inorder(root->right, target, reversed, s);
-        } else {
-            inorder(root->left, target, reversed, s);
-        }
-        if((reversed && root->val <= target) || (!reversed && root->val > target)) {
-            return;
-        }
-        s.push(root -> val);
-        if(reversed) {
-            inorder(root->left, target, reversed, s);
-        } else {
-            inorder(root->right, target, reversed, s);
-        }
+        return res;
     }
 };
