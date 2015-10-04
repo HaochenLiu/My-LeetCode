@@ -51,7 +51,7 @@ private:
         } else {
             inorder(root->left, target, reversed, s);
         }
-        if ((reversed && root -> val <= target) || (!reversed && root -> val > target)) {
+        if ((reversed && root->val <= target) || (!reversed && root->val > target)) {
             return;
         }
         s.push(root -> val);
