@@ -26,7 +26,9 @@ greedy
 Time: 
 O(n+m) best case
 O(mn) worst case
-Space: O(1)
+Space: O(n)
+Extra space: O(n)
+Stack depth: O(n)
 */
 
 class Solution {
