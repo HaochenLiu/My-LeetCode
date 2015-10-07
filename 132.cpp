@@ -7,6 +7,12 @@ For example, given s = "aab",
 Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
 */
 
+/*
+Time: O(mn)
+Space: O(mn)
+Extra space: O(mn)
+*/
+
 class Solution{
 public:
     int minCut(string s) {
