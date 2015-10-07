@@ -8,9 +8,9 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 */
 
 /*
-Time: O(mn)
-Space: O(mn)
-Extra space: O(mn)
+Time: O(n^2)
+Space: O(n^2)
+Extra space: O(n^2)
 */
 
 class Solution{
