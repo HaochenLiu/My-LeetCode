@@ -9,6 +9,16 @@ get(key) - Get the value (will always be positive) of the key if the key exists 
 set(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 */
 
+/*
+get:
+Time: O(1)
+Space: O(1)
+
+set:
+Time: O(1)
+Space: O(1)
+*/
+
 struct CacheNode{
     int key;
     int value;
