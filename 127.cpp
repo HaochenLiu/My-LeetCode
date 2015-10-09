@@ -44,8 +44,10 @@ public:
                         }
                         char temp = str[i];
                         str[i] = j;
-                        if (str == endWord) return distance + 1;
-                        if (wordList.count(str) > 0) {
+                        if (str == endWord) {
+                            return distance + 1;
+                        }
+                        if (wordList.find(str) != wordList.end()) {
                             queToPush.push(str);
                             wordList.erase(str);
                         }
