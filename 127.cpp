@@ -26,39 +26,40 @@ Note:
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, unordered_set<string>& wordList) {
-        if(beginWord.size() != endWord.size()) return 0;
-        if(beginWord.empty() || endWord.empty()) return 1;
-        if(wordList.size() == 0) return 0;
-
-        int distance = 1;
-        queue<string> queToPush;
-        queue<string> queToPop;
-        queToPop.push(beginWord);
-        while(wordList.size() > 0 && !queToPop.empty()) {
-            while(!queToPop.empty()) {
-                string str(queToPop.front());
-                queToPop.pop();
+        if(beginWord.size() != endWord.size()) return false;
+        if(beginWord.empty() && endWord.empty()) return true;
+        if(wordList.empty()) return false;
+        
+        int dist = 1;
+        queue<string> cur;
+        queue<string> next;
+        cur.push(beginWord);
+        while(!wordList.empty() && !cur.empty()) {
+            while(!cur.empty()) {
+                string str = cur.front();
+                cur.pop();
                 for(int i = 0; i < str.size(); i++) {
+                    char t = str[i];
                     for(char j = 'a'; j <= 'z'; j++) {
-                        if(j == str[i]) {
+                        if(t == j) {
                             continue;
                         }
-                        char temp = str[i];
                         str[i] = j;
-                        if(str == endWord) {
-                            return distance + 1;
-                        }
                         if(wordList.find(str) != wordList.end()) {
-                            queToPush.push(str);
+                            if(str == endWord) {
+                                return dist + 1;
+                            }
+                            next.push(str);
                             wordList.erase(str);
                         }
-                        str[i] = temp;
                     }
+                    str[i] = t;
                 }
             }
-            swap(queToPush, queToPop);
-            distance++;
+            swap(cur, next);
+            dist++;
         }
+
         return 0;
     }
 };
