@@ -29,7 +29,7 @@ Note:
 class Solution {
 public:
     unordered_map<string, vector<string>> m;
-    vector<vector<string> > res;
+    vector<vector<string>> res;
     vector<string> path;
     
     void findDict2(string str, unordered_set<string> &dict, unordered_set<string> &next_lev) {
