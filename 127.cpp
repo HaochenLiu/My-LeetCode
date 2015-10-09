@@ -31,7 +31,8 @@ public:
         if (wordList.size() == 0) return 0;
 
         int distance = 1;
-        queue<string> queToPush, queToPop;
+        queue<string> queToPush;
+        queue<string> queToPop;
         queToPop.push(beginWord);
         while (wordList.size() > 0 && !queToPop.empty()) {
             while (!queToPop.empty()) {
