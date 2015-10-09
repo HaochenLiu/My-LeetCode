@@ -28,7 +28,7 @@ Note:
 
 class Solution {
 public:
-    unordered_map<string,vector<string> > m;
+    unordered_map<string, vector<string>> m;
     vector<vector<string> > res;
     vector<string> path;
     
