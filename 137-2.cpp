@@ -1,7 +1,7 @@
 /*
 137. Single Number II
-http://www.cnblogs.com/x1957/p/3373994.html
 
+http://www.cnblogs.com/x1957/p/3373994.html
 Given an array of integers, every element appears three times except for one. Find that single one.
 Note:
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
