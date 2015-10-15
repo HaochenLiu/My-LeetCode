@@ -11,36 +11,35 @@ Special thanks to @porker2008 for adding this problem and creating all test case
 
 class Solution {
 public:
-    int maximumGap(vector<int> &num) {
-       if (num.size() < 2) return 0;
-        //遍历一遍，找出最大最小值
-        int maxNum = num[0];
-        int minNum = num[0];
-        for (int i : num) {
-            maxNum=max(maxNum,i);
-            minNum=min(minNum,i);
+    int maximumGap(vector<int>& nums) {
+        int n = nums.size();
+        if (n < 2) return 0;
+        int maxVal = nums[0];
+        int minVal = nums[0];
+        for (int i = 0; i < n; i++) {
+            maxVal = max(maxVal, nums[i]);
+            minVal = min(minVal, nums[i]);
         }
-        // 每个桶的长度len,向上取整所以加+
-        int len = (maxNum - minNum) / num.size() + 1;
-        
-        //桶的个数:(maxNum - minNum) / len + 1,每个桶里面存储属于该桶的最大值和最小值即可，注意这里的最大最小值是局部的
-        vector<vector<int>> buckets((maxNum - minNum) / len + 1);
-        for (int x : num) {
-            int i = (x - minNum) / len;
-            if (buckets[i].empty()) {
-                buckets[i].reserve(2);
-                buckets[i].push_back(x);
-                buckets[i].push_back(x);
+
+        int len = (maxVal - minVal - 1) / (n - 1) + 1;
+        int cnt = (maxVal - minVal) / len + 1;
+        vector<vector<int>> buckets(cnt, vector<int>{});
+        for (int i = 0; i < n; i++) {
+            int idx = (nums[i] - minVal) / len;
+            if (buckets[idx].empty()) {
+                buckets[idx].resize(2, nums[i]);
             } else {
-                if (x < buckets[i][0]) buckets[i][0] = x;
-                if (x > buckets[i][1]) buckets[i][1] = x;
+                buckets[idx][0] = min(buckets[idx][0], nums[i]);
+                buckets[idx][1] = max(buckets[idx][1], nums[i]);
             }
         }
-        //gap的计算，For each non-empty buckets p, find the next non-empty buckets q, return min（ q.min - p.max ）
+
         int gap = 0;
         int prev = 0;
-        for (int i = 1; i < buckets.size(); i++) {
-            if (buckets[i].empty()) continue;
+        for (int i = 1; i < cnt; i++) {
+            if (buckets[i].empty()) {
+                continue;
+            }
             gap = max(gap, buckets[i][0] - buckets[prev][1]);
             prev = i;
         }
