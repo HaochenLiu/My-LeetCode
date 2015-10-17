@@ -11,8 +11,11 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 http://blog.csdn.net/foreverling/article/details/43911309
 */
 
-// Time： O(nk)
-// Space: O(k)
+/*
+Time： O(nk)
+Space: O(k)
+*/
+
 class Solution {
 public:
     int maxProfit(int k, vector<int> &prices) {
