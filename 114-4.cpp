@@ -24,6 +24,11 @@ The flattened tree should look like:
              6
 */
 
+/*
+Time: O(n)
+Space: O(1)
+*/
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -46,7 +51,7 @@ public:
                 root->right = root->left;
                 root->left = NULL;
             }
-            root=root->right;
+            root = root->right;
         }
     }
 };
