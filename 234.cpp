@@ -25,25 +25,26 @@ private:
 
         return res;
     }
-
+    
     ListNode* reverseList(ListNode* head) {
         if(head == NULL || head->next == NULL) return head;
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* beg = &dummy;
-        ListNode* cur = beg->next;
-        ListNode* move = cur->next;
-        while(cur->next != NULL) {
-            move = cur->next;
+        ListNode* ins = &dummy;
+        ListNode* cur = ins->next;
+        while(cur->next) {
+            ListNode* move = cur->next;
             cur->next = move->next;
-            move->next = beg->next;
-            beg->next = move;
+            move->next = ins->next;
+            ins->next = move;
         }
+        
         return dummy.next;
     }
-    
+       
 public:
     bool isPalindrome(ListNode* head) {
+        // Write your code here
         if(head == NULL || head->next == NULL) return true;
         int cnt = getCnt(head);
         ListNode* cur = head;
@@ -51,9 +52,8 @@ public:
         for(int i = 0; i < (cnt - 1) / 2; i++) {
             cur = cur->next;
         }
-
-        ListNode* mid = reverseList(cur->next);
         
+        ListNode* mid = reverseList(cur->next);
         while(mid) {
             if(mid->val != head->val) {
                 return false;
@@ -61,6 +61,6 @@ public:
             mid = mid->next;
             head = head->next;
         }
-        return true;
+        return true;        
     }
 };
