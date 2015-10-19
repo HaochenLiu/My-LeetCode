@@ -16,36 +16,24 @@ return 2.
  *     Interval(int s, int e) : start(s), end(e) {}
  * };
  */
-bool compare(Interval interval1, Interval interval2) {
-    return interval1.start < interval2.start;
-}
-
 class Solution {
-private:
-    int findNonOverlapping(vector<vector<Interval>>& rooms, Interval& interval) {
-        int n = rooms.size();
-        for (int i = 0; i < n; i++) {
-            if (interval.start >= rooms[i].back().end) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
 public:
     int minMeetingRooms(vector<Interval>& intervals) {
-        sort(intervals.begin(), intervals.end(), compare);
-        vector<vector<Interval>> rooms;
+        if(intervals.empty()) return 0;
         int n = intervals.size();
-        for (int i = 0; i < n; i++) {
-            int idx = findNonOverlapping(rooms, intervals[i]);
-            if (rooms.empty() || idx == -1) {
-                rooms.push_back({intervals[i]});
-            } else {
-                rooms[idx].push_back(intervals[i]);
-            }
+        map<int, int> m;
+        for(int i = 0; i < n; i++) {
+            m[intervals[i].start]++;
+            m[intervals[i].end]--;
         }
-        return rooms.size();
+        
+        int res = 0;
+        int cur = 0;
+        for(auto it = m.begin(); it != m.end(); it++) {
+            cur += it->second;
+            res = max(res, cur);
+        }
+        
+        return res;
     }
 };
