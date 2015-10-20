@@ -19,28 +19,32 @@ Special thanks to @stellari for adding this problem, creating these two awesome 
 class Solution {
 public:
     vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings) {
+        vector<pair<int, int>> res;
+        if(buildings.empty()) return res;
+        int n = buildings.size();
         vector<pair<int, int>> height;
-        for (auto &b : buildings) {
-            height.push_back({b[0], -b[2]});
-            height.push_back({b[1], b[2]});
+        for(int i = 0; i < n; i++) {
+            height.push_back(make_pair(buildings[i][0], -buildings[i][2]));
+            height.push_back(make_pair(buildings[i][1], buildings[i][2]));
         }
         sort(height.begin(), height.end());
-        multiset<int> heap;
-        heap.insert(0);
-        vector<pair<int, int>> res;
-        int pre = 0, cur = 0;
-        for (auto &h : height) {
-            if (h.second < 0) {
-                heap.insert(-h.second);
+        multiset<int> s;
+        s.insert(0);
+        int pre = 0;
+        int cur = 0;
+        for(int i = 0; i < 2 * n; i++) {
+            if(height[i].second < 0) {
+                s.insert(-height[i].second);
             } else {
-                heap.erase(heap.find(h.second));
+                s.erase(s.find(height[i].second));
             }
-            cur = *heap.rbegin();
-            if (cur != pre) {
-                res.push_back({h.first, cur});
+            cur = *s.rbegin();
+            if(cur != pre) {
+                res.push_back(make_pair(height[i].first, cur));
                 pre = cur;
             }
         }
+        
         return res;
     }
 };
