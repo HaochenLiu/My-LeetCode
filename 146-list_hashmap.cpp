@@ -1,5 +1,6 @@
 /*
 146. LRU Cache
+
 http://www.cnblogs.com/x1957/p/3485053.html
 http://www.cplusplus.com/reference/list/list/splice/
 
@@ -24,6 +25,7 @@ struct CacheNode{
     int value;
     CacheNode(int k , int v) : key(k), value(v){}
 };
+
 class LRUCache{
 public:
     LRUCache(int capacity) {
