@@ -20,10 +20,15 @@ Time: O(1)
 Space: O(1)
 */
 
-struct CacheNode{
+class CacheNode{
+public:
     int key;
-    int value;
-    CacheNode(int k , int v) : key(k), value(v){}
+    int val;
+
+    CacheNode(int k, int v) {
+        key = k;
+        val = v;
+    }
 };
 
 class LRUCache{
@@ -33,33 +38,29 @@ public:
     }
     
     int get(int key) {
-        if(cacheMap.find(key) != cacheMap.end()) {
-            auto it = cacheMap[key];
-            cacheList.splice(cacheList.begin(), cacheList , it);
-            cacheMap[key] = cacheList.begin();
-            return cacheList.begin()->value;
-        } else {
-            return -1;
-        }
+        if(CacheMap.find(key) == CacheMap.end()) return -1;
+        list<CacheNode>::iterator it = CacheMap[key];
+        CacheList.splice(CacheList.begin(), CacheList, it);
+        return it->val;
     }
     
     void set(int key, int value) {
-        if (cacheMap.find(key) != cacheMap.end()) {
-            auto it = cacheMap[key];
-            cacheList.splice(cacheList.begin(), cacheList , it);
-            cacheMap[key] = cacheList.begin();
-            cacheList.begin()->value = value;
-        } else {
-            if(cacheList.size() == size) {
-                cacheMap.erase(cacheList.back().key);
-                cacheList.pop_back();
+        if(CacheMap.find(key) == CacheMap.end()) {
+            if(CacheList.size() == size) {
+                CacheMap.erase(CacheList.back().key);
+                CacheList.pop_back();
             }
-            cacheList.push_front(CacheNode(key, value));
-            cacheMap[key] = cacheList.begin();
+            CacheList.push_front(CacheNode(key, value));
+            CacheMap[key] = CacheList.begin();
+        } else {
+            list<CacheNode>::iterator it = CacheMap[key];
+            it->val = value;
+            CacheList.splice(CacheList.begin(), CacheList, it);
         }
     }
+    
 private:
     int size;
-    list<CacheNode> cacheList;
-    unordered_map<int, list<CacheNode>::iterator > cacheMap;
+    list<CacheNode> CacheList;
+    unordered_map<int, list<CacheNode>::iterator> CacheMap;
 };
