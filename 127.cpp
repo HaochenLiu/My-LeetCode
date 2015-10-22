@@ -26,31 +26,33 @@ Note:
 class Solution {
 public:
     int ladderLength(string beginWord, string endWord, unordered_set<string>& wordList) {
-        if(beginWord.size() != endWord.size()) return false;
-        if(beginWord.empty() && endWord.empty()) return true;
-        if(wordList.empty()) return false;
-        
-        int dist = 1;
+        if(beginWord.size() != endWord.size()) return 0;
+        if(beginWord == endWord) return 1;
+        unordered_set<string> s;
         queue<string> cur;
         queue<string> next;
+        int dist = 2;
+
+        wordList.insert(beginWord);
+        wordList.insert(endWord);
+        s.insert(beginWord);
         cur.push(beginWord);
-        while(!wordList.empty() && !cur.empty()) {
+
+        while(!cur.empty()) {
             while(!cur.empty()) {
                 string str = cur.front();
                 cur.pop();
                 for(int i = 0; i < str.size(); i++) {
                     char t = str[i];
-                    for(char j = 'a'; j <= 'z'; j++) {
-                        if(t == j) {
-                            continue;
-                        }
-                        str[i] = j;
-                        if(wordList.find(str) != wordList.end()) {
+                    for(char c = 'a'; c <= 'z'; c++) {
+                        if(c == t) continue;
+                        str[i] = c;
+                        if(wordList.find(str) != wordList.end() && s.find(str) == s.end()) {
                             if(str == endWord) {
-                                return dist + 1;
+                                return dist;
                             }
                             next.push(str);
-                            wordList.erase(str);
+                            s.insert(str);
                         }
                     }
                     str[i] = t;
