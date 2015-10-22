@@ -85,7 +85,7 @@ public:
                 return res;
             }
             
-            if(next.find(endWord) != wordList.end()) {
+            if(next.find(endWord) != next.end()) {
                 output(m, res, path, beginWord, endWord);
                 return res;
             }
