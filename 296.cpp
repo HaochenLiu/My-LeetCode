@@ -34,25 +34,25 @@ public:
                 }
             }
         }
-
-        if(row.size() < 2) {
+        
+        n = row.size();
+        if(n < 2) {
             return 0;
         }
         
         sort(row.begin(), row.end());
         sort(col.begin(), col.end());
 
-        int r = row[row.size() / 2];
-        int c = col[row.size() / 2];
+        int r = row[n / 2];
+        int c = col[n / 2];
         int res = 0;
 
         for(int i = 0; i < n; i++) {
-            for(int j = 0; j < m; j++) {
-                if(grid[i][j] == 1) {
-                    res += abs(i - r);
-                    res += abs(j - c);
-                }
-            }
+            res += abs(row[i] - r);
+        }
+
+        for(int j = 0; j < n; j++) {
+            res += abs(col[j] - c);
         }
 
         return res;
