@@ -49,10 +49,7 @@ public:
 
         for(int i = 0; i < n; i++) {
             res += abs(row[i] - r);
-        }
-
-        for(int j = 0; j < n; j++) {
-            res += abs(col[j] - c);
+            res += abs(col[i] - c);
         }
 
         return res;
