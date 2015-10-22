@@ -33,17 +33,19 @@ public:
     vector<string> path;
     
     void findDict2(string str, unordered_set<string> &dict, unordered_set<string> &next_lev) {
-        int sz = str.size();
+        int n = str.size();
         string s = str;
-        for(int i = 0; i < sz; i++) {
-            s = str;
-            for(char j = 'a'; j <= 'z'; j++) {
-                s[i] = j;
+        for(int i = 0; i < n; i++) {
+            char t = s[i];
+            for(char c = 'a'; c <= 'z'; c++) {
+                if(t == c) continue;
+                s[i] = c;
                 if(dict.find(s) != dict.end()) {
                     next_lev.insert(s);
                     m[s].push_back(str);
                 }
             }
+            s[i] = t;
         }
     }
     
@@ -92,7 +94,6 @@ public:
                 return res;
             }
 
-            cur_lev.clear();
             cur_lev = next_lev;
             next_lev.clear();
         }
