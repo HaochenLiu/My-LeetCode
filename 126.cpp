@@ -28,11 +28,7 @@ Note:
 
 class Solution {
 public:
-    unordered_map<string, vector<string>> m;
-    vector<vector<string>> res;
-    vector<string> path;
-    
-    void findDict2(string str, unordered_set<string> &dict, unordered_set<string> &next_lev) {
+    void findDict2(unordered_map<string, vector<string>>& m, unordered_set<string> &wordList, unordered_set<string> &next, string str) {
         int n = str.size();
         string s = str;
         for(int i = 0; i < n; i++) {
@@ -40,8 +36,8 @@ public:
             for(char c = 'a'; c <= 'z'; c++) {
                 if(t == c) continue;
                 s[i] = c;
-                if(dict.find(s) != dict.end()) {
-                    next_lev.insert(s);
+                if(wordList.find(s) != wordList.end()) {
+                    next.insert(s);
                     m[s].push_back(str);
                 }
             }
@@ -49,7 +45,7 @@ public:
         }
     }
     
-    void output(string& beg, string& end) {
+    void output(unordered_map<string, vector<string>>& m, vector<vector<string>>& res, vector<string>& path, string& beg, string& end) {
         if(beg == end) {
             reverse(path.begin(), path.end());
             res.push_back(path);
@@ -57,46 +53,47 @@ public:
         } else {
             for(int i = 0; i < m[end].size(); i++) {
                 path.push_back(m[end][i]);
-                output(beg, m[end][i]);
+                output(m, res, path, beg, m[end][i]);
                 path.pop_back();
             }
         }
     }
     
     vector<vector<string>> findLadders(string beginWord, string endWord, unordered_set<string> &wordList) {
-        m.clear();
-        res.clear();
-        path.clear();
+        unordered_map<string, vector<string>> m;
+        vector<vector<string>> res;
+        vector<string> path;
         
         wordList.insert(beginWord);
         wordList.insert(endWord);
         
-        unordered_set<string> cur_lev;
-        cur_lev.insert(beginWord);
-        unordered_set<string> next_lev;
+        unordered_set<string> cur;
+        unordered_set<string> next;
+        cur.insert(beginWord);
         path.push_back(endWord);
         
         while(true) {
-            for(auto it = cur_lev.begin(); it != cur_lev.end(); it++) {
+            for(auto it = cur.begin(); it != cur.end(); it++) {
                 wordList.erase(*it);
             }
 
-            for(auto it = cur_lev.begin(); it != cur_lev.end(); it++) {
-                findDict2(*it, wordList, next_lev);
+            for(auto it = cur.begin(); it != cur.end(); it++) {
+                findDict2(m, wordList, next, *it);
             }
 
-            if(next_lev.empty()) {
+            if(next.empty()) {
                 return res;
             }
             
-            if(next_lev.find(endWord) != wordList.end()) {
-                output(beginWord, endWord);
+            if(next.find(endWord) != wordList.end()) {
+                output(m, res, path, beginWord, endWord);
                 return res;
             }
 
-            cur_lev = next_lev;
-            next_lev.clear();
+            cur = next;
+            next.clear();
         }
+
         return res;    
     }
 };
