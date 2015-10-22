@@ -49,15 +49,15 @@ public:
         }
     }
     
-    void output(string &start, string last){
-        if(last == start){
+    void output(string& beg, string& end) {
+        if(beg == end) {
             reverse(path.begin(), path.end());
             res.push_back(path);
             reverse(path.begin(), path.end());
         } else {
-            for(int i = 0; i < m[last].size(); i++){
-                path.push_back(m[last][i]);
-                output(start,m[last][i]);
+            for(int i = 0; i < m[end].size(); i++) {
+                path.push_back(m[end][i]);
+                output(beg, m[end][i]);
                 path.pop_back();
             }
         }
