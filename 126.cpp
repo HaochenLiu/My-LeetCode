@@ -28,7 +28,7 @@ Note:
 
 class Solution {
 public:
-    void findDict2(unordered_map<string, vector<string>>& m, unordered_set<string> &wordList, unordered_set<string> &next, string str) {
+    void findDict(unordered_map<string, vector<string>>& m, unordered_set<string> &wordList, unordered_set<string> &next, string str) {
         int n = str.size();
         string s = str;
         for(int i = 0; i < n; i++) {
@@ -60,15 +60,14 @@ public:
     }
     
     vector<vector<string>> findLadders(string beginWord, string endWord, unordered_set<string> &wordList) {
-        unordered_map<string, vector<string>> m;
         vector<vector<string>> res;
         vector<string> path;
+        unordered_set<string> cur;
+        unordered_set<string> next;
+        unordered_map<string, vector<string>> m;
         
         wordList.insert(beginWord);
         wordList.insert(endWord);
-        
-        unordered_set<string> cur;
-        unordered_set<string> next;
         cur.insert(beginWord);
         path.push_back(endWord);
         
@@ -78,7 +77,7 @@ public:
             }
 
             for(auto it = cur.begin(); it != cur.end(); it++) {
-                findDict2(m, wordList, next, *it);
+                findDict(m, wordList, next, *it);
             }
 
             if(next.empty()) {
