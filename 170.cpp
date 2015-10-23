@@ -16,12 +16,12 @@ private:
 
 public:
     // Add the number to an internal data structure.
-	void add(int number) {
+    void add(int number) {
         map[number]++;
     }
    
     // Find if there exists any pair of numbers which sum is equal to the value.
-	bool find(int value) {
+    bool find(int value) {
         for (unordered_map<int, int>::const_iterator it = map.begin(); it != map.end(); it++) {
             int key = value - it->first;
             if (key == it->first) {
