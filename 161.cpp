@@ -7,26 +7,27 @@ Given two strings S and T, determine if they are both one edit distance apart.
 class Solution {
 public:
     bool isOneEditDistance(string s, string t){
-        if (s.length() > t.length()) {
-            swap(s,t);
+        if(s.length() > t.length()) {
+            swap(s, t);
         }
 
-        if (t.length() - s.length() > 1) {
+        if(t.length() - s.length() > 1) {
             return false;
         }
 
         bool have = false;
-        for (int i = 0, j = 0; i < s.length(); i++, j++) {
-            if (s[i] != t[j]) {
-                if (have) {
+        for(int i = 0, j = 0; i < s.length(); i++, j++) {
+            if(s[i] != t[j]) {
+                if(have) {
                     return false;
                 }
                 have = true;
-                if (s.length() < t.length()) {
+                if(s.length() < t.length()) {
                     i--;
                 }
             }
         }
+
         return (have) || (s.length() < t.length());
     }
 };
