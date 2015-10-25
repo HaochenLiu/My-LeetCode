@@ -20,7 +20,7 @@ Extra space: O(nm)
 class Solution {
 public:
     int minDistance(string word1, string word2) {
-        vector<vector<int> > f(word1.size()+1, vector<int>(word2.size()+1));
+        vector<vector<int>> f(word1.size() + 1, vector<int>(word2.size() + 1));
         f[0][0] = 0;
         for(int i = 1; i <= word2.size(); i++) {
             f[0][i] = i;
