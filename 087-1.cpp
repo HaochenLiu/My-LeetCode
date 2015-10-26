@@ -67,11 +67,11 @@ public:
 
         bool result = false;
         for(int i = 1; i < n; i++) {
-            result = isScramble(s1.substr(0, i) , s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i));
+            result = isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i));
             if(result) {
                 return true;
             }
-            result = isScramble(s1.substr(0, i) , s2.substr(n - i)) && isScramble(s1.substr(i), s2.substr(0, n - i));
+            result = isScramble(s1.substr(0, i), s2.substr(n - i)) && isScramble(s1.substr(i), s2.substr(0, n - i));
             if(result) {
                 return true;
             }
