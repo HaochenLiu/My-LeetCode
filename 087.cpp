@@ -43,7 +43,7 @@ Given two strings s1 and s2 of the same length, determine if s2 is a scrambled s
 */
 
 /*
-Time: O(n)
+Time: O(2^n)
 Space: O(n)
 Extra space: O(n)
 */
@@ -53,23 +53,23 @@ public:
     bool isScramble(string s1, string s2) {
         if(s1 == s2) return true;
         if(s1.size() != s2.size()) return false;
-        vector<int> charset(26, 0);
+        int charset[26] = {0};
         for(int i = 0 ; i < s1.size() ; ++i) {
-            charset[s1[i] - 'a']++;
+            charset[s1[i]-'a']++;
         }
         for(int i = 0 ; i < s2.size() ; ++i) {
-            charset[s2[i] - 'a']--;
+            charset[s2[i]-'a']--;
         }
         for(int i = 0 ; i < 26 ; ++i) {
             if(charset[i] != 0) return false;
         }        
         bool result = false;
         for(int i = 1 ; i < s1.size() ; ++i) {
-            result = isScramble(s1.substr(0, i) , s2.substr(0, i)) && isScramble(s1.substr(i) , s2.substr(i));
+            result = isScramble(s1.substr(0, i) , s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i));
             if(result) {
                 return true;
             }
-            result = isScramble(s1.substr(0, i) , s2.substr(s1.size() - i, i)) && isScramble(s1.substr(i) , s2.substr(0 , s1.size() - i));
+            result = isScramble(s1.substr(0, i) , s2.substr(s1.size() - i, i)) && isScramble(s1.substr(i), s2.substr(0, s1.size() - i));
             if(result) {
                 return true;
             }
