@@ -71,7 +71,7 @@ public:
             if(result) {
                 return true;
             }
-            result = isScramble(s1.substr(0, i) , s2.substr(s1.size() - i)) && isScramble(s1.substr(i), s2.substr(0, s1.size() - i));
+            result = isScramble(s1.substr(0, i) , s2.substr(n - i)) && isScramble(s1.substr(i), s2.substr(0, n - i));
             if(result) {
                 return true;
             }
