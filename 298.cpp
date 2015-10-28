@@ -60,9 +60,8 @@ private:
 public:
     int longestConsecutive(TreeNode* root) {
         if(root == NULL) return 0;
-        int len = 1;
         int maxLen = 1;
-        longestConsecutiveRecur(root, len, maxLen);
+        longestConsecutiveRecur(root, 1, maxLen);
         return maxLen;
     }
 };
