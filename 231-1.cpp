@@ -9,6 +9,6 @@ Special thanks to @jianchao.li.fighter for adding this problem and creating all 
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
-        return (n > 0) && ((n & (n - 1)) == 0);
+        return (n > 0) && (!(n & (n - 1)));
     }
 };
