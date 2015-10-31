@@ -37,7 +37,7 @@ public:
         }
         for(auto it = ms.begin(); it != ms.end(); it++) {
             if(mg.find(it->first) != mg.end()) {
-                AB += min(ms[it->first], mg[it->first]);
+                AB += min(it->second, mg[it->first]);
             }
         }
         
