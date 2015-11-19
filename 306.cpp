@@ -59,11 +59,11 @@ public:
         int n = num.size();
         if(n < 3) return false;
         for(int i = 1; i < n; i++) {
-            for(int j = i; j < n; j++) {
-                if(num[i] == '0' && j > i) continue;
+            for(int j = i + 1; j < n; j++) {
+                if(num[i] == '0' && j > i + 1) continue;
                 string s1 = num.substr(0, i);
-                string s2 = num.substr(i, j - i + 1);
-                int curLen = j + 1;
+                string s2 = num.substr(i, j - i);
+                int curLen = j;
                 string s3 = strAdd(s1, s2);
                 int nextLen = s3.size();
                 if(nextLen > n - curLen) {
