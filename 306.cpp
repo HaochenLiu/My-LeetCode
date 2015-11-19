@@ -63,16 +63,16 @@ public:
                 if(num[i] == '0' && j > i) continue;
                 string s1 = num.substr(0, i);
                 string s2 = num.substr(i, j - i + 1);
-                int curLen = j;
+                int curLen = j + 1;
                 string s3 = strAdd(s1, s2);
                 int nextLen = s3.size();
-                if(nextLen >= n - curLen) {
+                if(nextLen > n - curLen) {
                     continue;
                 }
-                if(num.substr(curLen + 1, nextLen) != s3) {
+                if(num.substr(curLen, nextLen) != s3) {
                     continue;
                 }
-                if(nextLen == n - curLen - 1) {
+                if(nextLen == n - curLen) {
                     return true;
                 }
                 while(true) {
@@ -81,13 +81,13 @@ public:
                     curLen += nextLen;
                     s3 = strAdd(s1, s2);
                     nextLen = s3.size();
-                    if(nextLen >= n - curLen) {
+                    if(nextLen > n - curLen) {
                         break;
                     }
-                    if(num.substr(curLen + 1, nextLen) != s3) {
+                    if(num.substr(curLen, nextLen) != s3) {
                         break;
                     }
-                    if(nextLen == n - curLen - 1) {
+                    if(nextLen == n - curLen) {
                         return true;
                     }
                 }
