@@ -21,3 +21,23 @@ Time: O(n)
 Space: O(n)
 */
 
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int n = prices.size();
+        if(n < 2) return 0;
+
+        vector<int> full(n, 0);
+        vector<int> empty(n, 0);
+        vector<int> sell(n, 0);
+        
+        full[0] = -prices[0];
+        for(int i = 1; i < prices.size(); i++) {
+            full[i] = max(full[i - 1], empty[i - 1] - prices[i]);
+            sell[i] = full[i - 1] + prices[i];
+            empty[i] = max(empty[i - 1], sell[i - 1]);
+        }
+
+        return max(empty[prices.size() - 1], sell[prices.size() - 1]);
+    }
+};
