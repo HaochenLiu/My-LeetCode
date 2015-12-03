@@ -20,31 +20,31 @@ class Stack {
 public:
     // Push element x onto stack.
     void push(int x) {
-        queueArr[currentQueue].push(x);
+        queueArr[cur].push(x);
     }
 
     // Removes the element on top of the stack.
     void pop() {
-        if(queueArr[currentQueue].empty()){
-            currentQueue = (currentQueue + 1)%2;
+        if(queueArr[cur].empty()){
+            cur = 1 - cur;
         }
-        while(queueArr[currentQueue].size()!=1){
-            queueArr[(currentQueue + 1)%2].push(queueArr[currentQueue].front());
-            queueArr[currentQueue].pop();
+        while(queueArr[cur].size() != 1){
+            queueArr[1 - cur].push(queueArr[cur].front());
+            queueArr[cur].pop();
         }
-        queueArr[currentQueue].pop();
+        queueArr[cur].pop();
     }
 
     // Get the top element.
     int top() {
-        if(queueArr[currentQueue].empty()){
-            currentQueue = (currentQueue + 1)%2;
+        if(queueArr[cur].empty()){
+            cur = 1 - cur;
         }
-        while(queueArr[currentQueue].size()!=1){
-            queueArr[(currentQueue + 1)%2].push(queueArr[currentQueue].front());
-            queueArr[currentQueue].pop();
+        while(queueArr[cur].size() != 1){
+            queueArr[1 - cur].push(queueArr[cur].front());
+            queueArr[cur].pop();
         }
-        return queueArr[currentQueue].front();
+        return queueArr[cur].front();
     }
 
     // Return whether the stack is empty.
@@ -53,10 +53,10 @@ public:
     }
     
     Stack(){
-        currentQueue = 0;
+        cur = 0;
     }
     
 private:
     queue<int> queueArr[2];
-    int currentQueue;
+    int cur;
 };
