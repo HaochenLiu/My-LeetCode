@@ -35,6 +35,8 @@ public:
                 if(*s.rbegin() > t * primes[j]) {
                     s.erase(*s.rbegin());
                     s.insert(t * primes[j]);
+                } else {
+                    break;
                 }
             }
         }
