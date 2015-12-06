@@ -10,6 +10,12 @@ find(4) -> true
 find(7) -> false
 */
 
+/*
+Space: O(n)
+Add Time: O(1)
+Find Time: O(n)
+*/
+
 class TwoSum {
 private:
     unordered_map<int, int> map;
