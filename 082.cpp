@@ -28,29 +28,30 @@ public:
         if(head == NULL || head->next == NULL) return head;  
         ListNode dummy(0);  
         dummy.next = head;  
-        ListNode* cur = &dummy;
-        ListNode* next = head;  
-        while(next != NULL) {
+        ListNode* ins = &dummy;
+        ListNode* cur = head;  
+        while(cur != NULL) {
             bool isDup = false;  
-            while(next->next != NULL && next->val == next->next->val) {  
+            while(cur->next != NULL && cur->val == cur->next->val) {  
                 isDup = true;
-                ListNode* temp = next;
-                next = next->next;
+                ListNode* temp = cur;
+                cur = cur->next;
                 delete temp;
             }  
 
             if(isDup) {
-                ListNode* temp = next;
-                next = next->next;
+                ListNode* temp = cur;
+                cur = cur->next;
                 delete temp;
                 continue;
             }  
 
-            cur->next = next;
+            ins->next = cur;
+            ins = ins->next;
             cur = cur->next;
-            next= next->next;
         }  
-        cur->next = next;
+        ins->next = cur;
+
         return dummy.next;
     }  
 };
