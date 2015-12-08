@@ -32,8 +32,8 @@ public:
                 tmp = cur->next;
             } else {
                 ListNode* del = cur->next;
-                delete(del);
                 cur->next = cur->next->next;
+                delete(del);
                 tmp = cur->next;
             }
         }
