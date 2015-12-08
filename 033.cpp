@@ -20,9 +20,8 @@ public:
         int n = nums.size();
         int l = 0;
         int r = n - 1;
-        int m;
         while(l <= r) {
-            m = (l + r) / 2;
+            int m = (l + r) / 2;
             if(nums[m] == target) return m;
             if(nums[m] >= nums[l]) {
                 if(nums[l] <= target && target < nums[m]) {
@@ -38,6 +37,7 @@ public:
                 }
             }
         }
+
         return -1;
     }
 };
