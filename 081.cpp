@@ -14,26 +14,30 @@ Extra space: O(1)
 */
 
 class Solution {
-private:
-    bool find(vector<int>& nums, int l, int r, int target) {
-        if (l > r) {
-            return false;
-        }
-        int mid = (l + r) >> 1;
-        if (nums[mid] == target) {
-            return true;
-        }
-        else if (nums[l] < nums[r]) {
-            return nums[mid] < target ? find(nums, mid + 1, r, target) : find(nums, l, mid - 1, target);
-        }        
-        else {
-            return find(nums, l, mid - 1, target) || find(nums, mid + 1, r, target);
-        }
-    }
-
 public:
     bool search(vector<int>& nums, int target) {
         int n = nums.size();
-        return find(nums, 0, n - 1, target);
+        int l = 0;
+        int r = n - 1;
+        while(l <= r) {
+            int m = (l + r) / 2;
+            if(nums[m] == target) return true;
+            if(nums[m] > nums[l]) {
+                if(nums[l] <= target && target < nums[m]) {
+                    r = m - 1;
+                } else {
+                    l = m + 1;
+                }
+            } else if(nums[m] < nums[l]) {
+                if(nums[m] < target && target <= nums[r]) {
+                    l = m + 1;
+                } else {
+                    r = m - 1;
+                }
+            } else {
+                l++;
+            }
+        }
+        return false;
     }
 };
