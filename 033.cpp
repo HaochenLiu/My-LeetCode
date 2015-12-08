@@ -21,7 +21,7 @@ public:
         int l = 0;
         int r = n - 1;
         while(l <= r) {
-            int m = (l + r) / 2;
+            int m = l + (r - l) / 2;
             if(nums[m] == target) return m;
             if(nums[m] >= nums[l]) {
                 if(nums[l] <= target && target < nums[m]) {
