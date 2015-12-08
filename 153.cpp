@@ -12,23 +12,26 @@ You may assume no duplicate exists in the array.
 
 class Solution {
 public:
-    void bs(vector<int> &num, int beg,int end, int &res){
-        if (beg > end){ return; }
-        else {
-            int mid = beg + (end - beg) / 2; //get middle index
-            if (num[mid] < num[end]){  // right part orderend
-                res = min(res, num[mid]); //get right part min
-                bs(num, beg, mid - 1, res); //search left part
-            } else {  //right part unorderend
-                res = min(res, num[beg]); //get left part min
-                bs(num, mid + 1, end, res); //search right part
+    int findMin(vector<int>& nums) {
+        if(nums.empty()) return 0;
+        int n = nums.size();
+        int l = 0;
+        int r = n - 1;
+        int res = nums[0];
+        while(l <= r) {
+            int m = l + (r - l) / 2;
+            res = min(res, nums[m]);
+            if(nums[l] < nums[r]) {
+                r = m - 1;
+            } else {
+                if(nums[m] >= nums[l]) {
+                    l = m + 1;
+                } else {
+                    r = m - 1;
+                }
             }
         }
-    }
-    int findMin(vector<int> &num) {
-        int n = num.size();
-        int res = num[0];
-        bs(num, 0, n - 1, res);
+        
         return res;
     }
 };
