@@ -30,33 +30,47 @@ public:
         count = 1;
         leftSize = 0;
     }
+};
 
-    void insert(BSTNode* root, int v) {
-        BSTNode* node = root;
-        int res = 0;
-        while(true) {
-            if(node->val == v) {
-                node->count++;
-                break;
-            } else if(node->val > v) {
-                node->leftSize++;
-                if(node->left != NULL) {
-                    node = node->left;
-                } else {
-                    node->left = new BSTNode(v);
-                    break;
-                }
+void insert(BSTNode* root, int v) {
+    BSTNode* node = root;
+    int res = 0;
+    while(true) {
+        if(node->val == v) {
+            node->count++;
+            break;
+        } else if(node->val > v) {
+            node->leftSize++;
+            if(node->left != NULL) {
+                node = node->left;
             } else {
-                if(node->right != NULL) {
-                    node = node->right;
-                } else {
-                    node->right = new BSTNode(v);
-                    break;
-                }
+                node->left = new BSTNode(v);
+                break;
+            }
+        } else {
+            if(node->right != NULL) {
+                node = node->right;
+            } else {
+                node->right = new BSTNode(v);
+                break;
             }
         }
     }
-};
+}
+
+int searchSmaller(BSTNode* root, int v) {
+    BSTNode* node = root;
+    int res = 0;
+    while(node) {
+        if(node->val >= v) {
+            node = node->left;
+        } else {
+            res += node->leftSize + node->count;
+            node = node->right;
+        }
+    }
+    return res;
+}
 
 class Solution {
 public:
@@ -68,23 +82,9 @@ public:
         res[n - 1] = 0;
         for (int i = n - 2; i >= 0; i--) {
             res[i] = searchSmaller(root, nums[i]);
-            root->insert(root, nums[i]);
+            insert(root, nums[i]);
         }
 
-        return res;
-    }
-    
-    int searchSmaller(BSTNode* root, int v) {
-        BSTNode* node = root;
-        int res = 0;
-        while(node) {
-            if(node->val >= v) {
-                node = node->left;
-            } else {
-                res += node->leftSize + node->count;
-                node = node->right;
-            }
-        }
         return res;
     }
 };
