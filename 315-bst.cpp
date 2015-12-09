@@ -30,33 +30,33 @@ public:
         count = 1;
         leftSize = 0;
     }
-};
 
-void insert(BSTNode* root, int v) {
-    BSTNode* node = root;
-    int res = 0;
-    while(true) {
-        if(node->val == v) {
-            node->count++;
-            break;
-        } else if(node->val > v) {
-            node->leftSize++;
-            if(node->left != NULL) {
-                node = node->left;
-            } else {
-                node->left = new BSTNode(v);
+    void insert(BSTNode* root, int v) {
+        BSTNode* node = root;
+        int res = 0;
+        while(true) {
+            if(node->val == v) {
+                node->count++;
                 break;
-            }
-        } else {
-            if(node->right != NULL) {
-                node = node->right;
+            } else if(node->val > v) {
+                node->leftSize++;
+                if(node->left != NULL) {
+                    node = node->left;
+                } else {
+                    node->left = new BSTNode(v);
+                    break;
+                }
             } else {
-                node->right = new BSTNode(v);
-                break;
+                if(node->right != NULL) {
+                    node = node->right;
+                } else {
+                    node->right = new BSTNode(v);
+                    break;
+                }
             }
         }
     }
-}
+};
 
 class Solution {
 public:
@@ -68,7 +68,7 @@ public:
         res[n - 1] = 0;
         for (int i = n - 2; i >= 0; i--) {
             res[i] = searchSmaller(root, nums[i]);
-            insert(root, nums[i]);
+            root->insert(root, nums[i]);
         }
 
         return res;
