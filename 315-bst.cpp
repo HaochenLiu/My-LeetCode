@@ -20,17 +20,43 @@ public:
     BSTNode* left;
     BSTNode* right;
     int val;
+    int count;
     int leftSize;
-    int selfSize;
     
     BSTNode(int v) {
         left = NULL;
         right = NULL;
         val = v;
+        count = 1;
         leftSize = 0;
-        selfSize = 1;
     }
 };
+
+void insert(BSTNode* root, int v) {
+    BSTNode* node = root;
+    int res = 0;
+    while(true) {
+        if(node->val == v) {
+            node->count++;
+            break;
+        } else if(node->val > v) {
+            node->leftSize++;
+            if(node->left != NULL) {
+                node = node->left;
+            } else {
+                node->left = new BSTNode(v);
+                break;
+            }
+        } else {
+            if(node->right != NULL) {
+                node = node->right;
+            } else {
+                node->right = new BSTNode(v);
+                break;
+            }
+        }
+    }
+}
 
 class Solution {
 public:
@@ -55,36 +81,10 @@ public:
             if(node->val >= v) {
                 node = node->left;
             } else {
-                res += node->leftSize + node->selfSize;
+                res += node->leftSize + node->count;
                 node = node->right;
             }
         }
         return res;
-    }
-
-    void insert(BSTNode* root, int v) {
-        BSTNode* node = root;
-        int res = 0;
-        while(true) {
-            if(node->val == v) {
-                node->selfSize++;
-                break;
-            } else if(node->val > v) {
-                node->leftSize++;
-                if(node->left != NULL) {
-                    node = node->left;
-                } else {
-                    node->left = new BSTNode(v);
-                    break;
-                }
-            } else {
-                if(node->right != NULL) {
-                    node = node->right;
-                } else {
-                    node->right = new BSTNode(v);
-                    break;
-                }
-            }
-        }
     }
 };
