@@ -62,6 +62,7 @@ private:
 
 public:
     vector<TreeNode*> generateTrees(int n) {
+        if(n == 0) return vector<TreeNode*>{};
         return createTree(1, n);
     }
 };
