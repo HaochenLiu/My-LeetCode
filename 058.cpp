@@ -18,23 +18,14 @@ Extra space: O(1)
 
 class Solution {
 public:
-    int lengthOfLastWord(const char *s) {
-        if(s[0] == '\0') return 0;
-        
-        int res = 0;
-        int n = strlen(s);
-        int pos = n - 1;
-        while(s[pos] == ' ') {
-            pos--;
+    int lengthOfLastWord(string s) {
+        int ind1 = s.find_last_not_of(' ');
+        s = s.substr(0, ind1 + 1);
+        int ind2 = s.find_last_of(' ');
+        if(ind2 >= s.size()) {
+            return s.size();
+        } else {
+            return s.size() - ind2 - 1;
         }
-        
-        if(pos == -1) return 0;
-        
-        for(int i = pos; i >= 0; i--) {
-            if(s[i] == ' ') {
-                return (pos - i);
-            }
-        }
-        return pos + 1;
     }
 };
