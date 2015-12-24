@@ -52,16 +52,21 @@ public:
     template <class container>
     bool compareVector ( container vec1, container vec2)
     {
-      typename container::iterator first1 = vec1.begin(), last1 = vec1.end();
-      typename container::iterator first2 = vec2.begin(), last2 = vec2.end();
-      while (first1 != last1 && first2 != last2) {
-        if (*first1 > *first2)
-          return true;
-        else if (*first1 < *first2) return false;
-        ++first1; ++first2;
-      }
-      if (first1 == last1) return false;
-      else return true;
+        typename container::iterator first1 = vec1.begin(), last1 = vec1.end();
+        typename container::iterator first2 = vec2.begin(), last2 = vec2.end();
+        while (first1 != last1 && first2 != last2) {
+            if (*first1 > *first2) {
+                return true;
+            } else if (*first1 < *first2) {
+                return false;
+            }
+            ++first1; ++first2;
+        }
+        if (first1 == last1) {
+            return false;
+        } else {
+            return true;
+        }
     }
     
     void getDp(vector<int> nums, int k, vector<vector<int>> &dp) 
