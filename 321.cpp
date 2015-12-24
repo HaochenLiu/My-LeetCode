@@ -101,20 +101,27 @@ public:
                         InputIterator2 first2, InputIterator2 last2,
                         OutputIterator result)
     {
-      while (true) {
-        if (first1==last1) return std::copy(first2,last2,result);
-        if (first2==last2) return std::copy(first1,last1,result);
-        if (*first2 > *first1) *result++ = *first2++;
-        else if (*first2 < *first1) *result++ = *first1++;
-        else { // *first1 == *first2
-            auto pos1 = first1, pos2 = first2;
-            while (true) {
-                int f1 = (++pos1 != last1) ? *(pos1) : INT_MIN;
-                int f2 = (++pos2 != last2) ? *(pos2) : INT_MIN;
-                if (f1 > f2) { *result++ = *first1++; break;}
-                else if (f1 < f2) {*result++ = *first2++; break;}
+        while (true) {
+            if (first1==last1) return std::copy(first2,last2,result);
+            if (first2==last2) return std::copy(first1,last1,result);
+            if (*first2 > *first1) {
+                *result++ = *first2++;
+            } else if (*first2 < *first1) {
+                *result++ = *first1++;
+            } else { // *first1 == *first2
+                auto pos1 = first1, pos2 = first2;
+                while (true) {
+                    int f1 = (++pos1 != last1) ? *(pos1) : INT_MIN;
+                    int f2 = (++pos2 != last2) ? *(pos2) : INT_MIN;
+                    if (f1 > f2) {
+                        *result++ = *first1++; 
+                        break;
+                    } else if (f1 < f2) {
+                        *result++ = *first2++;
+                        break;
+                    }
+                }
             }
         }
-      }
     }
 };
