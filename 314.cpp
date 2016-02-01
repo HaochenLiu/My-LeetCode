@@ -1,6 +1,5 @@
 /*
 314. Binary Tree Vertical Order Traversal
-Total Accepted: 13 Total Submissions: 72 Difficulty: Medium
 
 Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
 
