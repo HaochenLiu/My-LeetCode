@@ -1,6 +1,5 @@
 /*
 320. Generalized Abbreviation
-Total Accepted: 44 Total Submissions: 118 Difficulty: Medium
 
 Write a function to generate the generalized abbreviations of a word.
 
