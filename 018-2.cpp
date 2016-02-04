@@ -42,7 +42,7 @@ public:
             if(i != 0 && num[i] == num[i - 1]) continue;
             for(int j = i + 1; j < n - 2; ++j) {
                 if(j != i + 1 && num[j] == num[j - 1]) continue;
-                if(pairs[target - num[i] - num[j]].size() != 0) {
+                if(pairs.find(target - num[i] - num[j]) != pairs.end()) {
                     vector<pair<int, int> > p = pairs[target - num[i] - num[j]];
                     bool first = true;
                     for(int k = 0; k < p.size(); ++k) {
