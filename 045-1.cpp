@@ -11,7 +11,7 @@ The minimum number of jumps to reach the last index is 2. (Jump 1 step from inde
 */
 
 /*
-Time: O(n)
+Time: O(n^2)
 Space: O(1)
 Extra space: O(1)
 */
