@@ -65,7 +65,7 @@ private:
     int total;
 public:
     /** Initialize your data structure here. */
-    TicTacToe(int n):total(n), rowJudge(n), colJudge(n),diag(0),anti(0){}
+    TicTacToe(int n): total(n), rowJudge(n), colJudge(n), diag(0), anti(0){}
 
     /** Player {player} makes a move at ({row}, {col}).
         @param row The row of the board.
