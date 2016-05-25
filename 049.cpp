@@ -15,24 +15,17 @@ L is maximum length of strs.
 
 class Solution {
 public:
-    vector<string> anagrams(vector<string> &strs) {
-        vector<string> res;
-        if (strs.size() <= 1) return res;
-        map<string, int> anagram;
-        for (int i = 0; i < strs.size(); ++i)
+    vector<vector<string>> groupAnagrams(vector<string>& strs) {
+        vector<vector<string>> ret;
+        unordered_map<string,multiset<string>> mp;
+        for(auto &x:strs)
         {
-            string s = strs[i];
-            sort(s.begin(), s.end());
-            if (anagram.find(s) == anagram.end()) {
-                anagram[s] = i;
-            } else {
-                if (anagram[s] >= 0) {
-                    res.push_back(strs[anagram[s]]);
-                    anagram[s] = -1;
-                }
-                res.push_back(strs[i]);
-            }
+            auto tmp = x;
+            sort(tmp.begin(),tmp.end());
+            mp[tmp].insert(x);
         }
-        return res;
+        for(auto &x:mp)
+            ret.push_back(vector<string>(x.second.begin(),x.second.end()));
+        return ret;
     }
 };
