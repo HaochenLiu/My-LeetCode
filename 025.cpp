@@ -44,18 +44,18 @@ public:
         ListNode dummy(0);
         dummy.next = head;
 
-        ListNode* ins = &dummy;
-        ListNode* cur = ins->next;
+        ListNode* pre = &dummy;
+        ListNode* cur = head;
         
         for(int i = 0; i < reverseTime; i++) {
             for(int j = 0; j < k - 1; j++) {
                 ListNode* move = cur->next;
                 cur->next = move->next;
-                move->next = ins->next;
-                ins->next = move;
+                move->next = pre->next;
+                pre->next = move;
             }
-            ins = cur;
-            cur = ins->next;
+            pre = cur;
+            cur = pre->next;
         }
         return dummy.next;
     }
