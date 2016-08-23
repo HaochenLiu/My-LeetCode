@@ -33,17 +33,17 @@ public:
         if(head == NULL || head->next == NULL || m == n) return head;
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* ins = &dummy;
+        ListNode* pre = &dummy;
         for(int i = 0; i < m - 1; i++) {
-            ins = ins->next;
+            pre = pre->next;
         }
 
-        ListNode* cur = ins->next;
+        ListNode* cur = pre->next;
         for(int i = 0; i < n - m; i++) {
             ListNode* move = cur->next;
             cur->next = move->next;
-            move->next = ins->next;
-            ins->next = move;
+            move->next = pre->next;
+            pre->next = move;
         }
 
         return dummy.next;
