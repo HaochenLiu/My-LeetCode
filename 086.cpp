@@ -26,27 +26,26 @@ Extra space: O(1)
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
+        if(head == NULL || head->next == NULL) return head;
         ListNode dummy(0);
         dummy.next = head;
+        ListNode* pre = &dummy;
         ListNode* cur = head;
-        ListNode* last = &dummy;
-        ListNode* prev = &dummy;
-        while(cur != NULL) {
-            if(cur->val < x) {
-                if(cur != last->next) {
-                    ListNode* tmp = cur->next;
-                    cur->next = last->next;
-                    last->next = cur;
-                    cur = tmp;
-                    prev->next = cur;
-                    last = last->next;
-                } else {
-                    prev = cur;
-                    last = cur;
-                    cur = cur->next;
-                }
+        while(pre->next != NULL && pre->next->val < x) {
+            pre = pre->next;
+        }
+        if(pre->next == NULL) {
+            return dummy.next;
+        }
+        cur = pre->next;
+        while(cur->next != NULL) {
+            if(cur->next->val < x) {
+                ListNode* move = cur->next;
+                cur->next = move->next;
+                move->next = pre->next;
+                pre->next = move;
+                pre = pre->next;
             } else {
-                prev = cur;
                 cur = cur->next;
             }
         }
