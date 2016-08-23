@@ -18,14 +18,14 @@ public:
         if(head == NULL || head->next == NULL) return head;
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* beg = &dummy;
-        ListNode* cur = beg->next;
+        ListNode* pre = &dummy;
+        ListNode* cur = head;
         ListNode* move = cur->next;
         while(cur->next != NULL) {
             move = cur->next;
             cur->next = move->next;
-            move->next = beg->next;
-            beg->next = move;
+            move->next = pre->next;
+            pre->next = move;
         }
         return dummy.next;
     }
