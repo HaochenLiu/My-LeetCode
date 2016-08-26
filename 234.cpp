@@ -30,13 +30,13 @@ private:
         if(head == NULL || head->next == NULL) return head;
         ListNode dummy(0);
         dummy.next = head;
-        ListNode* ins = &dummy;
-        ListNode* cur = ins->next;
+        ListNode* pre = &dummy;
+        ListNode* cur = head;
         while(cur->next) {
             ListNode* move = cur->next;
             cur->next = move->next;
-            move->next = ins->next;
-            ins->next = move;
+            move->next = pre->next;
+            pre->next = move;
         }
         
         return dummy.next;
