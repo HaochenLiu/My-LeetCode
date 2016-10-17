@@ -34,6 +34,10 @@ Extra space: O(1)
 
 // Below is the interface for Iterator, which is already defined for you.
 // **DO NOT** modify the interface for Iterator.
+// Below is the interface for Iterator, which is already defined for you.
+// **DO NOT** modify the interface for Iterator.
+// Below is the interface for Iterator, which is already defined for you.
+// **DO NOT** modify the interface for Iterator.
 class Iterator {
     struct Data;
     Data* data;
@@ -47,39 +51,36 @@ public:
     bool hasNext() const;
 };
 
-
 class PeekingIterator : public Iterator {
 public:
     PeekingIterator(const vector<int>& nums) : Iterator(nums) {
         // Initialize any member here.
         // **DO NOT** save a copy of nums and manipulate it directly.
         // You should only use the Iterator interface methods.
-        _flag = false;
+        peeked = false;
     }
 
     // Returns the next element in the iteration without advancing the iterator.
     int peek() {
-        if (!_flag) {
-            _value = Iterator::next();
-            _flag = true;
+        if (!peeked) {
+            value = Iterator::next();
+            peeked = true;
         }
-        return _value;
+        return value;
     }
 
     // hasNext() and next() should behave the same as in the Iterator interface.
     // Override them if needed.
     int next() {
-        if (!_flag) return Iterator::next();
-        _flag = false;
-        return _value;
+        if (!peeked) return Iterator::next();
+        peeked = false;
+        return value;
     }
 
     bool hasNext() const {
-        if (_flag) return true;
-        if (Iterator::hasNext()) return true;
-        return false;
+        return peeked || Iterator::hasNext();
     }
 private:
-    int _value;
-    bool _flag;
+    int value;
+    bool peeked;
 };
