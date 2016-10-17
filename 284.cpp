@@ -34,10 +34,6 @@ Extra space: O(1)
 
 // Below is the interface for Iterator, which is already defined for you.
 // **DO NOT** modify the interface for Iterator.
-// Below is the interface for Iterator, which is already defined for you.
-// **DO NOT** modify the interface for Iterator.
-// Below is the interface for Iterator, which is already defined for you.
-// **DO NOT** modify the interface for Iterator.
 class Iterator {
     struct Data;
     Data* data;
