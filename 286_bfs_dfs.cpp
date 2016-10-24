@@ -32,7 +32,7 @@ After running your function, the 2D grid should be:
 只能用bfs：leetcode 286 / 从某指定点到另一指定点图上最短距离
 只能用dfs：poj 1088
 只需要从一点搜索：从某指定点到另一指定点图上最短距离
-必须从所有点搜索：poj 1088
+必须从所有点搜索：leetcode 286 / poj 1088
 */
 
 class Solution {
